@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BlueDiamond.DataModel.Track>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index";    
 }
 
 <h2>Index</h2>
@@ -9,6 +9,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div> <a href=@Url.Action("DownloadAll", new { id = ViewBag.IncidentID })>Download All</a></div>
+
 <table class="table">
     <tr>
         <th> @Html.DisplayNameFor(model => model.Name) </th>
@@ -31,5 +33,4 @@
         </td>
     </tr>
 }
-
 </table>

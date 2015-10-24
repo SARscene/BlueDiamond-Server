@@ -13,6 +13,7 @@ namespace BlueDiamond.Desktop
         }
 
         private bool is64Bit { get { return IntPtr.Size == 8; } }
+
         public string IISPath
         {
             get
@@ -22,14 +23,14 @@ namespace BlueDiamond.Desktop
                     @"c:\Program Files (x86)\IIS Express\iisexpress.exe";
             }
         }
-        
-        private Process IISProcess{get;set;}
+
+        private Process IISProcess { get; set; }
 
         private int InstanceID { get { return IISProcess != null ? IISProcess.Id : -1; } }
 
         public static string ConfigFile
         {
-            get   { return Path.Combine(Paths.CommonApplicationData ,"applicationhost.config"); }
+            get { return Path.Combine(Paths.CommonApplicationData, "applicationhost.config"); }
         }
 
         public void Start(int port, string virtualDir)
@@ -37,8 +38,8 @@ namespace BlueDiamond.Desktop
             bool systray = Debugger.IsAttached;
             //string parameters = string.Format(" /path:\"{0}\" /port:{1} /trace:info /systray:{2}", virtualDir, port, systray);
             string parameters = string.Format("/config:\"{0}\" /site:BlueDiamond /trace:info", ConfigFile, systray);
-    
-                // start IIS
+
+            // start IIS
             ProcessStartInfo psi = new ProcessStartInfo(IISPath, parameters);
             psi.UseShellExecute = false;
             psi.RedirectStandardInput = false;
@@ -46,13 +47,13 @@ namespace BlueDiamond.Desktop
             psi.RedirectStandardError = true;
             psi.CreateNoWindow = true;
 
-            if (this.IISProcess != null) 
+            if (this.IISProcess != null)
                 throw new NotSupportedException("Multiple starts not supported");
 
             this.IISProcess = new Process();
             this.IISProcess.StartInfo = psi;
-            this.IISProcess.ErrorDataReceived+=iisProcess_ErrorDataReceived;
-            this.IISProcess.OutputDataReceived +=iisProcess_OutputDataReceived;
+            this.IISProcess.ErrorDataReceived += iisProcess_ErrorDataReceived;
+            this.IISProcess.OutputDataReceived += iisProcess_OutputDataReceived;
             this.IISProcess.Start();
             this.IISProcess.BeginErrorReadLine();
             this.IISProcess.BeginOutputReadLine();

@@ -40,6 +40,7 @@
             this.myUrlLabel = new System.Windows.Forms.LinkLabel();
             this.myRichTextBox = new System.Windows.Forms.RichTextBox();
             this.myNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mySplitContainer)).BeginInit();
             this.mySplitContainer.Panel1.SuspendLayout();
             this.mySplitContainer.Panel2.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // mySplitContainer.Panel1
             // 
+            this.mySplitContainer.Panel1.Controls.Add(this.label2);
             this.mySplitContainer.Panel1.Controls.Add(this.myURLPictureBox);
             this.mySplitContainer.Panel1.Controls.Add(this.myIPAddressLabel);
             this.mySplitContainer.Panel1.Controls.Add(this.myPictureBox);
@@ -75,7 +77,7 @@
             // 
             // myURLPictureBox
             // 
-            this.myURLPictureBox.Location = new System.Drawing.Point(221, 81);
+            this.myURLPictureBox.Location = new System.Drawing.Point(403, 45);
             this.myURLPictureBox.Name = "myURLPictureBox";
             this.myURLPictureBox.Size = new System.Drawing.Size(150, 150);
             this.myURLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,6 +167,15 @@
             this.myNotifyIcon.Visible = true;
             this.myNotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.myNotifyIcon_MouseDoubleClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(403, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Scan with Mobile App";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -203,6 +214,7 @@
         private System.Windows.Forms.NotifyIcon myNotifyIcon;
         private System.Windows.Forms.LinkLabel myIPAddressLabel;
         private System.Windows.Forms.PictureBox myURLPictureBox;
+        private System.Windows.Forms.Label label2;
 
     }
 }
