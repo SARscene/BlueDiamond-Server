@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ using BlueDiamond.DataModel;
 using BlueDiamond.Models;
 using BlueDiamond.StorageModel;
 using BlueDiamond.Utility;
+using Zen.Barcode;
 
 namespace BlueDiamond.Controllers
 {
@@ -26,6 +29,25 @@ namespace BlueDiamond.Controllers
             return View(incidents);
         }
 
+        public FileContentResult Show(Guid id)
+        {
+            CodeQrBarcodeDraw bdf = BarcodeDrawFactory.CodeQr;
+            Image image = bdf.Draw(id.ToString(), 3, 3);
+
+            byte[] imageByte = imageToByteArray(image);
+            string contentType = "image/png";
+
+            return File(imageByte, contentType);
+        }
+
+        public byte[] imageToByteArray(Image imageIn)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
         public async Task<ActionResult> Details(Guid? id)
         {
             if (id == null)

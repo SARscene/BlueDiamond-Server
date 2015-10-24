@@ -4,10 +4,13 @@
     ViewBag.Title = "Incident";
 }
 
+
 @Html.Partial("_Incident", Model)
+
+<img src=@Url.Action("show", "Incidents", new { id = Model.IncidentID })  />
 <hr/>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2">        
         @if(Model.IsOpen) 
         {
             @Html.ActionLink("Close", "Close", "Incidents", new { id = Model.IncidentID }, new { @class = "btn btn-primary" })
