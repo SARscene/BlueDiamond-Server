@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mySplitContainer = new System.Windows.Forms.SplitContainer();
+            this.myURLPictureBox = new System.Windows.Forms.PictureBox();
+            this.myIPAddressLabel = new System.Windows.Forms.LinkLabel();
             this.myPictureBox = new System.Windows.Forms.PictureBox();
             this.myVersionLabel = new System.Windows.Forms.Label();
             this.myTitleLabel = new System.Windows.Forms.Label();
@@ -38,11 +40,11 @@
             this.myUrlLabel = new System.Windows.Forms.LinkLabel();
             this.myRichTextBox = new System.Windows.Forms.RichTextBox();
             this.myNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.myIPAddressLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mySplitContainer)).BeginInit();
             this.mySplitContainer.Panel1.SuspendLayout();
             this.mySplitContainer.Panel2.SuspendLayout();
             this.mySplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myURLPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +58,7 @@
             // 
             // mySplitContainer.Panel1
             // 
+            this.mySplitContainer.Panel1.Controls.Add(this.myURLPictureBox);
             this.mySplitContainer.Panel1.Controls.Add(this.myIPAddressLabel);
             this.mySplitContainer.Panel1.Controls.Add(this.myPictureBox);
             this.mySplitContainer.Panel1.Controls.Add(this.myVersionLabel);
@@ -66,15 +69,35 @@
             // mySplitContainer.Panel2
             // 
             this.mySplitContainer.Panel2.Controls.Add(this.myRichTextBox);
-            this.mySplitContainer.Size = new System.Drawing.Size(690, 689);
+            this.mySplitContainer.Size = new System.Drawing.Size(692, 386);
             this.mySplitContainer.SplitterDistance = 254;
             this.mySplitContainer.TabIndex = 0;
+            // 
+            // myURLPictureBox
+            // 
+            this.myURLPictureBox.Location = new System.Drawing.Point(221, 81);
+            this.myURLPictureBox.Name = "myURLPictureBox";
+            this.myURLPictureBox.Size = new System.Drawing.Size(150, 150);
+            this.myURLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.myURLPictureBox.TabIndex = 7;
+            this.myURLPictureBox.TabStop = false;
+            // 
+            // myIPAddressLabel
+            // 
+            this.myIPAddressLabel.AutoSize = true;
+            this.myIPAddressLabel.Location = new System.Drawing.Point(86, 106);
+            this.myIPAddressLabel.Name = "myIPAddressLabel";
+            this.myIPAddressLabel.Size = new System.Drawing.Size(110, 16);
+            this.myIPAddressLabel.TabIndex = 6;
+            this.myIPAddressLabel.TabStop = true;
+            this.myIPAddressLabel.Text = "<applicationIP>";
+            this.myIPAddressLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.myUrlLabel_LinkClicked);
             // 
             // myPictureBox
             // 
             this.myPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.myPictureBox.Image = global::BlueDiamond.Desktop.Properties.Resources.ICP300;
-            this.myPictureBox.Location = new System.Drawing.Point(557, 13);
+            this.myPictureBox.Location = new System.Drawing.Point(559, 13);
             this.myPictureBox.Name = "myPictureBox";
             this.myPictureBox.Size = new System.Drawing.Size(121, 115);
             this.myPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 105);
+            this.label1.Location = new System.Drawing.Point(19, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 1;
@@ -113,7 +136,7 @@
             // myUrlLabel
             // 
             this.myUrlLabel.AutoSize = true;
-            this.myUrlLabel.Location = new System.Drawing.Point(102, 105);
+            this.myUrlLabel.Location = new System.Drawing.Point(86, 81);
             this.myUrlLabel.Name = "myUrlLabel";
             this.myUrlLabel.Size = new System.Drawing.Size(114, 16);
             this.myUrlLabel.TabIndex = 0;
@@ -128,7 +151,7 @@
             this.myRichTextBox.Location = new System.Drawing.Point(0, 0);
             this.myRichTextBox.Name = "myRichTextBox";
             this.myRichTextBox.ReadOnly = true;
-            this.myRichTextBox.Size = new System.Drawing.Size(690, 431);
+            this.myRichTextBox.Size = new System.Drawing.Size(692, 128);
             this.myRichTextBox.TabIndex = 0;
             this.myRichTextBox.Text = "";
             this.myRichTextBox.WordWrap = false;
@@ -142,22 +165,11 @@
             this.myNotifyIcon.Visible = true;
             this.myNotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.myNotifyIcon_MouseDoubleClick);
             // 
-            // myIPAddressLabel
-            // 
-            this.myIPAddressLabel.AutoSize = true;
-            this.myIPAddressLabel.Location = new System.Drawing.Point(102, 130);
-            this.myIPAddressLabel.Name = "myIPAddressLabel";
-            this.myIPAddressLabel.Size = new System.Drawing.Size(110, 16);
-            this.myIPAddressLabel.TabIndex = 6;
-            this.myIPAddressLabel.TabStop = true;
-            this.myIPAddressLabel.Text = "<applicationIP>";
-            this.myIPAddressLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.myUrlLabel_LinkClicked);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 689);
+            this.ClientSize = new System.Drawing.Size(692, 386);
             this.Controls.Add(this.mySplitContainer);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -173,6 +185,7 @@
             this.mySplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mySplitContainer)).EndInit();
             this.mySplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.myURLPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -189,6 +202,7 @@
         private System.Windows.Forms.PictureBox myPictureBox;
         private System.Windows.Forms.NotifyIcon myNotifyIcon;
         private System.Windows.Forms.LinkLabel myIPAddressLabel;
+        private System.Windows.Forms.PictureBox myURLPictureBox;
 
     }
 }

@@ -6,6 +6,8 @@ using BlueToque.Utility;
 using BlueDiamond.Desktop.Properties;
 using System.Net;
 using System.Net.Sockets;
+using Zen.Barcode;
+using System.Drawing;
 
 namespace BlueDiamond.Desktop
 {
@@ -30,8 +32,13 @@ namespace BlueDiamond.Desktop
             Url = string.Format("http://{0}:{1}/", Environment.MachineName, Settings.Default.Port);
             myVersionLabel.Text = string.Format("{0} - {1}", info.Product, info.Version);
 
+            string ipAddress = GetIPAddress();
             myIPAddressLabel.Text = string.Format("http://{0}:{1}/", GetIPAddress(), Settings.Default.Port);
             myUrlLabel.Text = Url;
+
+            CodeQrBarcodeDraw bdf = BarcodeDrawFactory.CodeQr;
+            myURLPictureBox.Image = bdf.Draw(myIPAddressLabel.Text, 10, 10);
+
         }
 
         public string Url { get; set; }

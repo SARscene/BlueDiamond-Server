@@ -29,10 +29,16 @@ namespace BlueDiamond.Controllers
             return View(incidents);
         }
 
-        public FileContentResult Show(Guid id)
+        public string GetUrl()
         {
+            return string.Format("http://{0}:{1}/", GetIPAddress(), Request.Url.Port);
+        }
+
+        public FileContentResult Show(Guid id)
+        {          
             CodeQrBarcodeDraw bdf = BarcodeDrawFactory.CodeQr;
-            Image image = bdf.Draw(id.ToString(), 3, 3);
+
+            Image image = bdf.Draw(GetUrl(), 3, 3);
 
             byte[] imageByte = imageToByteArray(image);
             string contentType = "image/png";
@@ -48,6 +54,13 @@ namespace BlueDiamond.Controllers
                 return ms.ToArray();
             }
         }
+        public string GetIPAddress()
+        {
+            string myHost = System.Net.Dns.GetHostName();
+            string ipAddress = System.Net.Dns.GetHostEntry(myHost).AddressList.FirstOrDefault(x=>x.AddressFamily== System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+            return ipAddress;
+        }
+
         public async Task<ActionResult> Details(Guid? id)
         {
             if (id == null)

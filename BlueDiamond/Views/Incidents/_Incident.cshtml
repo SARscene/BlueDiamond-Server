@@ -4,7 +4,7 @@
     <h1>Incident @Html.DisplayFor(model => model.TaskNumber)</h1>
     <hr />
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <dl class="dl-horizontal">
                 <dt> @Html.DisplayNameFor(model => model.Name): </dt>
                 <dd> @Html.DisplayFor(model => model.Name) </dd>
@@ -19,7 +19,7 @@
             </dl>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             <dl class="dl-horizontal">
                 <dt> @Html.DisplayNameFor(model => model.TaskNumber): </dt>
                 <dd> @Html.DisplayFor(model => model.TaskNumber) </dd>
@@ -30,6 +30,10 @@
                 <dt> @Html.DisplayNameFor(model => model.ASENumber): </dt>
                 <dd> @Html.DisplayFor(model => model.ASENumber) </dd>
             </dl>
+        </div>
+
+        <div class="col-md-4">
+            <img src=@Url.Action("show", "Incidents", new { id = Model.IncidentID }) />
         </div>
 
     </div>
