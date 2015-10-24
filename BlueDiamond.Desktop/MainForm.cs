@@ -6,8 +6,9 @@ using BlueToque.Utility;
 using BlueDiamond.Desktop.Properties;
 using System.Net;
 using System.Net.Sockets;
-using Zen.Barcode;
 using System.Drawing;
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Controls;
 
 namespace BlueDiamond.Desktop
 {
@@ -36,11 +37,22 @@ namespace BlueDiamond.Desktop
             myIPAddressLabel.Text = string.Format("http://{0}:{1}/", GetIPAddress(), Settings.Default.Port);
             myUrlLabel.Text = Url;
 
-            CodeQrBarcodeDraw bdf = BarcodeDrawFactory.CodeQr;
-            myURLPictureBox.Image = bdf.Draw(myIPAddressLabel.Text, 10, 10);
+            myURLPictureBox.Image = GetQRCode(myIPAddressLabel.Text);
 
         }
 
+        Image GetQRCode(string value)
+        {
+            QrEncoder enc = new QrEncoder();
+            QrCode code = enc.Encode(value);
+
+            Renderer renderer = new Renderer(5);
+            Image image = new Bitmap(256, 256);
+            using (Graphics graphics = Graphics.FromImage(image))
+                renderer.Draw(graphics, code.Matrix);
+            return image;
+
+        }
         public string Url { get; set; }
 
         void DebugTraceListener_TraceMessage(object sender, TraceEventArgs e)

@@ -72,14 +72,15 @@
             // 
             this.mySplitContainer.Panel2.Controls.Add(this.myRichTextBox);
             this.mySplitContainer.Size = new System.Drawing.Size(692, 386);
-            this.mySplitContainer.SplitterDistance = 254;
+            this.mySplitContainer.SplitterDistance = 303;
             this.mySplitContainer.TabIndex = 0;
             // 
             // myURLPictureBox
             // 
-            this.myURLPictureBox.Location = new System.Drawing.Point(403, 45);
+            this.myURLPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.myURLPictureBox.Location = new System.Drawing.Point(394, 13);
             this.myURLPictureBox.Name = "myURLPictureBox";
-            this.myURLPictureBox.Size = new System.Drawing.Size(150, 150);
+            this.myURLPictureBox.Size = new System.Drawing.Size(286, 286);
             this.myURLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.myURLPictureBox.TabIndex = 7;
             this.myURLPictureBox.TabStop = false;
@@ -87,7 +88,7 @@
             // myIPAddressLabel
             // 
             this.myIPAddressLabel.AutoSize = true;
-            this.myIPAddressLabel.Location = new System.Drawing.Point(86, 106);
+            this.myIPAddressLabel.Location = new System.Drawing.Point(34, 162);
             this.myIPAddressLabel.Name = "myIPAddressLabel";
             this.myIPAddressLabel.Size = new System.Drawing.Size(110, 16);
             this.myIPAddressLabel.TabIndex = 6;
@@ -97,9 +98,8 @@
             // 
             // myPictureBox
             // 
-            this.myPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.myPictureBox.Image = global::BlueDiamond.Desktop.Properties.Resources.ICP300;
-            this.myPictureBox.Location = new System.Drawing.Point(559, 13);
+            this.myPictureBox.Location = new System.Drawing.Point(251, 112);
             this.myPictureBox.Name = "myPictureBox";
             this.myPictureBox.Size = new System.Drawing.Size(121, 115);
             this.myPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -110,7 +110,7 @@
             // 
             this.myVersionLabel.AutoSize = true;
             this.myVersionLabel.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myVersionLabel.Location = new System.Drawing.Point(18, 42);
+            this.myVersionLabel.Location = new System.Drawing.Point(17, 78);
             this.myVersionLabel.Name = "myVersionLabel";
             this.myVersionLabel.Size = new System.Drawing.Size(133, 23);
             this.myVersionLabel.TabIndex = 4;
@@ -122,14 +122,14 @@
             this.myTitleLabel.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myTitleLabel.Location = new System.Drawing.Point(13, 13);
             this.myTitleLabel.Name = "myTitleLabel";
-            this.myTitleLabel.Size = new System.Drawing.Size(544, 29);
+            this.myTitleLabel.Size = new System.Drawing.Size(359, 58);
             this.myTitleLabel.TabIndex = 2;
-            this.myTitleLabel.Text = "Blue Diamond: Simple Incident Management";
+            this.myTitleLabel.Text = "Blue Diamond\r\nSimple Incident Management";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 81);
+            this.label1.Location = new System.Drawing.Point(18, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 1;
@@ -138,7 +138,7 @@
             // myUrlLabel
             // 
             this.myUrlLabel.AutoSize = true;
-            this.myUrlLabel.Location = new System.Drawing.Point(86, 81);
+            this.myUrlLabel.Location = new System.Drawing.Point(34, 137);
             this.myUrlLabel.Name = "myUrlLabel";
             this.myUrlLabel.Size = new System.Drawing.Size(114, 16);
             this.myUrlLabel.TabIndex = 0;
@@ -153,7 +153,7 @@
             this.myRichTextBox.Location = new System.Drawing.Point(0, 0);
             this.myRichTextBox.Name = "myRichTextBox";
             this.myRichTextBox.ReadOnly = true;
-            this.myRichTextBox.Size = new System.Drawing.Size(692, 128);
+            this.myRichTextBox.Size = new System.Drawing.Size(692, 79);
             this.myRichTextBox.TabIndex = 0;
             this.myRichTextBox.Text = "";
             this.myRichTextBox.WordWrap = false;
@@ -170,7 +170,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(403, 202);
+            this.label2.Location = new System.Drawing.Point(34, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 16);
             this.label2.TabIndex = 8;

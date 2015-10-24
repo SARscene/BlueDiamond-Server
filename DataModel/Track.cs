@@ -36,6 +36,8 @@ namespace BlueDiamond.DataModel
 
         public Guid IncidentID { get; set; }
 
+        public virtual Incident Incident{ get; set; }
+
         public ICollection<TrackPoint> Points { get; set; }
 
         public string ToXmlString()

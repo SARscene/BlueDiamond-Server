@@ -257,7 +257,6 @@
     <Compile Include="Utility\TimeZoneInfoModelBinder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\BlueDiamond.sdf" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />

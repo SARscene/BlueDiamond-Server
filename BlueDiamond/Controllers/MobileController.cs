@@ -15,8 +15,8 @@ using BlueDiamond.Utility;
 
 namespace BlueDiamond.Controllers
 {
-    [AllowCrossSiteJson]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[AllowCrossSiteJson]
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MobileController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -53,17 +53,23 @@ namespace BlueDiamond.Controllers
         /// <param name="name">user name</param>
         /// <param name="phoneNumber">user's phone number</param>
         [HttpGet]
-        [ResponseType(typeof(string))]
         public IHttpActionResult SignIn(Guid? id)
         {
             NameValueCollection nvc = HttpUtility.ParseQueryString(Request.RequestUri.Query);
 
             string name = nvc["name"];
-            string phoneNumber = nvc["phoneNnumber"];
+            if (string.IsNullOrEmpty(name))
+                name = "Test";
+            string phoneNumber = nvc["phoneNumber"];
+            if (string.IsNullOrEmpty(phoneNumber))
+                phoneNumber = "555-555-5555";
             try
             {
                 // get or create a member GUID
                 if (!id.HasValue)
+                    id = Guid.NewGuid();
+
+                if (id.Value == Guid.Empty)
                     id = Guid.NewGuid();
 
                 //get the open Incident
@@ -79,11 +85,13 @@ namespace BlueDiamond.Controllers
                     {
                         MemberID = id.Value,
                         FirstName = name,
-                        LastName = "",
+                        LastName = "Test",
                         PhoneNumber = phoneNumber,
                         EmailAddress = "email@email.com",
                         AgencyID = incident.AgencyID,
+                       
                     };
+                    member.Core.CreatedBy="Blue Diamond";
                     db.Members.Add(member);
                     db.SaveChanges();
                 }
@@ -112,6 +120,11 @@ namespace BlueDiamond.Controllers
             }
         }
 
+        //public IHttpActionResult GetMap(Guid? id)
+        //{
+
+        //}
+
         /// <summary>
         /// Upload a track to the current incident
         /// </summary>
@@ -125,31 +138,35 @@ namespace BlueDiamond.Controllers
                 if (trackModel == null && trackModel.Track == null)
                     return NotFound();
 
-                if (string.IsNullOrEmpty(trackModel.MemberID))
-                    return NotFound();
-
                 // get or create a member GUID
                 Guid memberGUID = Guid.Empty;
                 if (string.IsNullOrEmpty(trackModel.MemberID))
                     memberGUID = Guid.NewGuid();
                 else
                     memberGUID = new Guid(trackModel.MemberID);
-
                 Member member = await db.Members.FindAsync(memberGUID);
                 if (member == null)
                     return NotFound();
 
-                trackModel.Track.TrackID = Guid.NewGuid();
-                foreach (var trackPoint in trackModel.Track.Points)
-                    trackPoint.TrackPointID = Guid.NewGuid();
+                //get the open Incident
+                Incident incident = db.Incidents.ToList().FirstOrDefault(x => x.IsOpen);
+                if (incident == null)
+                    return NotFound();
 
+                trackModel.Track.TrackID = Guid.NewGuid();
+                trackModel.Track.IncidentID = incident.IncidentID;
+                foreach (var trackPoint in trackModel.Track.Points)
+                {
+                    trackPoint.TrackPointID = Guid.NewGuid();
+                    trackPoint.TimeStamp = DateTime.Now;
+                }
                 db.Tracks.Add(trackModel.Track);
 
                 await db.SaveChangesAsync();
 
                 return Ok();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Trace.TraceError("Error uploading track:\r\n{0}", ex);
                 return BadRequest(ex.Message);

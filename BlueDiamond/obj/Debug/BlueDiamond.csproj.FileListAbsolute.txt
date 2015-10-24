@@ -159,7 +159,6 @@ C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\System.Web.WebPages.dll
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\System.Web.WebPages.Razor.dll
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\WebGrease.dll
-C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\Zen.Barcode.Core.dll
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\BlueToque.GpxLib.dll
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\BlueToque.Utility.dll
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\BlueDiamond.DataModel.pdb
@@ -203,3 +202,7 @@ C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\obj\Debug\BlueDiamond.csprojResolveAssemblyReference.cache
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\obj\Debug\BlueDiamond.dll
 C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\obj\Debug\BlueDiamond.pdb
+C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\Gma.QrCodeNet.Encoding.dll
+C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\System.Web.Cors.dll
+C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\System.Web.Http.Cors.dll
+C:\Users\Michael Coyle\Documents\Development\BlueDiamond-Server\BlueDiamond\bin\System.Web.Http.Cors.xml
