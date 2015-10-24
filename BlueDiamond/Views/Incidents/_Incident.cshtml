@@ -1,0 +1,41 @@
+﻿@model BlueDiamond.DataModel.Incident
+
+<div>
+    <h1>Incident @Html.DisplayFor(model => model.TaskNumber)</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt> @Html.DisplayNameFor(model => model.Name): </dt>
+                <dd> @Html.DisplayFor(model => model.Name) </dd>
+                <dt> @Html.DisplayNameFor(model => model.Description): </dt>
+                <dd> @Html.DisplayFor(model => model.Description) </dd>
+                <dt> @Html.DisplayNameFor(model => model.Location): </dt>
+                <dd> @Html.DisplayFor(model => model.Location) </dd>
+                <dt> @Html.DisplayNameFor(model => model.Opened): </dt>
+                <dd> @Html.DisplayFor(model => model.Opened): </dd>
+                <dt> @Html.DisplayNameFor(model => model.Closed) </dt>
+                <dd> @Html.DisplayFor(model => model.Closed): </dd>
+            </dl>
+        </div>
+
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt> @Html.DisplayNameFor(model => model.TaskNumber): </dt>
+                <dd> @Html.DisplayFor(model => model.TaskNumber) </dd>
+                <dt> @Html.DisplayNameFor(model => model.RCMPNumber): </dt>
+                <dd> @Html.DisplayFor(model => model.RCMPNumber) </dd>
+                <dt> @Html.DisplayNameFor(model => model.BCASNumber): </dt>
+                <dd> @Html.DisplayFor(model => model.BCASNumber) </dd>
+                <dt> @Html.DisplayNameFor(model => model.ASENumber): </dt>
+                <dd> @Html.DisplayFor(model => model.ASENumber) </dd>
+            </dl>
+        </div>
+
+    </div>
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.Agency.Name): </dt>
+        <dd> @Html.DisplayFor(model => model.Agency.Name) </dd>
+    </dl>
+    @Html.DisplayFor(model => model.Core)
+</div>

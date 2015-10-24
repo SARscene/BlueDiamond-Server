@@ -1,0 +1,11 @@
+﻿@model System.DateTime?
+@if (Model.HasValue)
+{
+    <time class="timeago" datetime="@Model.Value.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'")">
+        @Model.Value.ToLocalTime().ToString()
+    </time>
+}
+else
+{
+    @: not set
+}

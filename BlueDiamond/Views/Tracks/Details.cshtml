@@ -1,0 +1,26 @@
+﻿@model BlueDiamond.DataModel.Track
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Track</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.Name)</dt>
+        <dd> @Html.DisplayFor(model => model.Name)</dd>
+ 
+        <dt> @Html.DisplayNameFor(model => model.Core.Created) </dt>
+        <dd> @Html.DisplayFor(model => model.Core.Created) </dd>
+
+        <dt> @Html.DisplayNameFor(model => model.IncidentID) </dt>
+        <dd> @Html.DisplayFor(model => model.IncidentID) </dd>
+   </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrackID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

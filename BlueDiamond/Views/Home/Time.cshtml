@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Time";
+}
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Date</h3>
+        <h2>
+            <span id="largeDate"></span>
+        </h2>
+    </div>
+    <div class="col-md-6">
+        <h3>Time</h3>
+        <h2>
+            <span id="largeTime"></span>
+        </h2>
+    </div>
+</div>
+<hr/>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Location</h3>
+        <h2>
+            <span id="latitude"></span> <span id="longitude"></span> &plusmn; <span id="accuracy"></span>
+        </h2>
+    </div>
+    <div class="col-md-6">
+        <h3>UTM</h3>
+        <h2>
+            <span id="UTM"></span>
+        </h2>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Sunrise</h3>
+        <h2>
+            <span id="sunrise"></span>
+        </h2>
+    </div>
+    <div class="col-md-6">
+        <h3>Sunset</h3>
+        <h2>
+            <span id="sunset"></span>
+        </h2>
+    </div>
+</div>
+
+<div class="well">
+    <div id="StatusMessage"></div>
+    <div id="Message"></div>
+</div>
+
+@using (Html.BeginScriptContext())
+{
+    Html.AddScriptFile("/Scripts/suncalc.js");
+    Html.AddScriptFile("/Scripts/geog.js");
+    Html.AddScriptBlock(
+
+        @<script type="text/javascript">
+            // using https://github.com/mourner/suncalc
+
+            $(document).ready(function () {
+                clock2();
+                var clockInterval = setInterval(clock2, 1000);
+
+                GeoLocate(
+                        function (position) {
+                            $("#latitude").text(position.latitude.toFixed(5));
+                            $("#longitude").text(position.longitude.toFixed(5));
+                            $("#accuracy").text(position.accuracy);
+
+                            ConvertToUTM(
+                                position.latitude,
+                                position.longitude,
+                                function (zone, easting, northing) {
+                                    $("#UTM").text(zone + " " + easting + " " + northing);
+                                });
+
+                            // get today's sunlight times for London
+                            var times = SunCalc.getTimes(new Date(), position.latitude, position.longitude);
+
+                            $("#sunrise").text(times.sunrise.toLocaleTimeString());
+                            $("#sunset").text(times.sunset.toLocaleTimeString());
+
+                            $("#StatusMessage").text("Location found on " + new Date());
+
+                        },
+                        function (error) {
+                            $("#StatusMessage").text(msg);
+                            $("#Message").val("The subject loaded the web page on\n"
+                                + "     " + new Date() + "\n"
+                                + "and their location <b>could not be determined</b><br/>\n"
+                                + "The message was:\n"
+                                + "\"" + err.message + "\""
+                            );
+                        }
+                    );
+            });
+
+            function clock2() {
+                var s = (new Date()).toLocaleTimeString();
+                var d = (new Date()).toDateString();
+                $('#largeDate').text(s);
+                $('#largeTime').text(d);
+                //document.getElementById('time').innerHTML = s;
+            }
+
+
+        </script>
+    );
+}
+
+
+
+
+

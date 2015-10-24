@@ -1,0 +1,24 @@
+﻿@model BlueDiamond.DataModel.Agency
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Agency</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Name) </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> @Html.DisplayNameFor(model => model.Name) </dt>
+        <dd> @Html.DisplayFor(model => model.Name) </dd>
+        <dt> @Html.DisplayNameFor(model => model.Description) </dt>
+        <dd> @Html.DisplayFor(model => model.Description) </dd>
+        <dt> @Html.DisplayNameFor(model => model.Core) </dt>
+        <dd> @Html.DisplayFor(model => model.Core) </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AgencyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Configuration"
+    targetNamespace="http://BlueToque.ca/BlueDiamond.Desktop/Configuration"
+    elementFormDefault="qualified"
+    xmlns="http://BlueToque.ca/BlueDiamond.Desktop/Configuration"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="Configuration" type="ConfigurationType"/>
+  <xs:complexType name="ConfigurationType">
+    <xs:sequence>
+      <xs:element name="Port" type="xs:int" />
+      <xs:element name="Path" type="xs:int" />
+      <xs:any minOccurs="0" namespace="##local" processContents="lax" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

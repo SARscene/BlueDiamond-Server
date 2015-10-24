@@ -1,0 +1,40 @@
+﻿@model BlueDiamond.Models.CheckInViewModel
+
+@{
+    ViewBag.Title = "SignIn";
+}
+
+@Html.Partial("_Incident", Model.Incident)
+
+
+<h2>Sign in to task  </h2>
+<hr/>
+<table class="table">
+    <tr>
+        <th> Last Name </th>
+        <th> First Name </th>
+        <th> Signed In</th>
+        <th> Signed Out</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.SignIns) {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.Member.LastName) </td>
+            <td> @Html.DisplayFor(modelItem => item.Member.FirstName) </td>
+            <td> @Html.DisplayFor(modelItem => item.SignInTime) </td>
+            <td> @Html.DisplayFor(modelItem => item.SignOutTime) </td>
+            <td> @if (item.IsSignedIn)
+            {
+                @Html.ActionLink("Sign Out", "SignOut", "Incidents", new { id = Model.Incident.IncidentID, memberID = item.MemberID }, new { @class = "btn btn-success" });
+            }
+            else
+            {
+                @Html.ActionLink("Sign In", "SignIn", "Incidents", new { id = Model.Incident.IncidentID, memberID = item.MemberID }, new { @class = "btn btn-default" });
+            }
+            </td>
+            <td> </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,27 @@
+﻿@model System.DateTime?
+<!-- http://eonasdan.github.io/bootstrap-datetimepicker/-->
+@{var fieldName = ViewData.TemplateInfo.HtmlFieldPrefix;}
+<div class="input-group date" id="@fieldName-group">
+    @Html.TextBox("",
+                Model.HasValue ? String.Format("{0:yyyy-MM-dd HH:mm}", Model) : string.Empty,
+                new { @class = "form-control", placeholder = ViewData.ModelMetadata.Watermark })
+    <span class="input-group-addon">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="glyphicon glyphicon-calendar"></i>
+    </span>
+</div>
+
+
+@using (Html.BeginScriptContext())
+{
+    Html.AddScriptBlock(
+        @<script type="text/javascript">
+
+            $(function () {
+                $('#@fieldName-group').datetimepicker({
+                    format: 'YYYY-MM-DD HH:mm'
+                });
+            });
+    </script>
+    );
+}
+

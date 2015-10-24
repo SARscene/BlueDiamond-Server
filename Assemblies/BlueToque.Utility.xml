@@ -1,0 +1,2300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BlueToque.Utility</name>
+    </assembly>
+    <members>
+        <member name="T:BlueToque.Utility.Win32.POINT">
+            <summary>
+            Win32 POINT class
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.POINT.X">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.POINT.Y">
+            <summary> </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.POINT.#ctor(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.POINT.op_Implicit(BlueToque.Utility.Win32.POINT)~System.Drawing.Point">
+            <summary>
+            
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.POINT.op_Implicit(System.Drawing.Point)~BlueToque.Utility.Win32.POINT">
+            <summary>
+            
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.StringHelper">
+            <summary>
+            Extension methods for string
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.ToArray(System.Collections.Specialized.StringCollection)">
+            <summary>
+            Convert a string collection to an array of strings.
+            </summary>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.GetFirstValue(System.String,System.Char)">
+            <summary>
+            Get the first part of a string that has multiple seperators
+            </summary>
+            <param name="value"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.GetValue(System.String,System.Char)">
+            <summary>
+            Extension for the string class that gets the value of a name/value pair
+            The name/value pair is delimited by the separator parameter.
+            The code searches for the last instance of the separator character and returns 
+            the string after that character.
+            </summary>
+            <param name="value"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.GetName(System.String,System.Char)">
+            <summary>
+            Extension method for a string that get the name of a name/value pair
+            Seeaches for the last instance of the "separator" parameter and returns 
+            the string that occurs before that separator.
+            </summary>
+            <param name="value"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.RemoveWhiteSpace(System.String)">
+            <summary>
+            Remove whitespace characters from a string
+            </summary>
+            <param name="inputString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.RemoveString(System.String,System.String)">
+            <summary>
+            Remove the given string from the input string
+            </summary>
+            <param name="inputString"></param>
+            <param name="stringToRemove"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.RemoveString(System.String,System.String,System.Boolean)">
+            <summary>
+            remove the given string from the input string, 
+            ignoring case if the ignoreCase flag is set to true (default)
+            </summary>
+            <param name="inputString"></param>
+            <param name="stringToRemove"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.MD5Hash(System.String)">
+            <summary>
+            Hashes the string with the MD5 algorithm
+            </summary>
+            <returns>A hashed version of the string</returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.StripHTML(System.String)">
+            <summary>
+            Removes any HTML markup from the string
+            </summary>
+            <returns>An HTML-free version of the string</returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.IsEmailAddress(System.String)">
+            <summary>
+            Determines whether the string contains an email address
+            </summary>
+            <returns>True if the string contains an email</returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.IsUrl(System.String)">
+            <summary>
+            Determines whether the string contains a URL
+            </summary>
+            <returns>True if the string contains a URL</returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.IsNullOrEmpty(System.String)">
+            <summary>
+            return true if a string is null, or an empty string
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.SubString(System.String,System.Int32,System.Int32)">
+            <summary>
+            A substring method that takes a start position and an end posiiton 
+            as parameters
+            </summary>
+            <param name="s"></param>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.StringHelper.GetQuoted(System.String,System.Char)">
+            <summary>
+            Retrieve the first instance of a quoted string from the string
+            </summary>
+            <param name="s"></param>
+            <param name="quote"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.Helpers">
+            <summary>
+            General helper methods
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Helpers.Compare``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})">
+            <summary>
+            Compare the two collections of a given type.
+            The two collections are eqyual if each contains the same items
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection1"></param>
+            <param name="collection2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.Data.RectangleType">
+            <remarks/>
+        </member>
+        <member name="M:BlueToque.Utility.Data.RectangleType.RaisePropertyChanged(System.String)">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.RectangleType.heightField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.RectangleType.leftField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.RectangleType.topField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.RectangleType.widthField">
+            <summary />
+        </member>
+        <member name="E:BlueToque.Utility.Data.RectangleType.PropertyChanged">
+            <summary />
+        </member>
+        <member name="P:BlueToque.Utility.Data.RectangleType.height">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.RectangleType.left">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.RectangleType.top">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.RectangleType.width">
+            <remarks/>
+        </member>
+        <member name="T:BlueToque.Utility.Data.FormSettingsType2">
+            <remarks/>
+        </member>
+        <member name="M:BlueToque.Utility.Data.FormSettingsType2.RaisePropertyChanged(System.String)">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.flagsField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.maxXField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.maxYField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.minXField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.minYField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.normBottomField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.normLeftField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.normRightField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.normTopField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.showCommandField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType2.anyField">
+            <summary />
+        </member>
+        <member name="E:BlueToque.Utility.Data.FormSettingsType2.PropertyChanged">
+            <summary />
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.Flags">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.MaxX">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.MaxY">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.MinX">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.MinY">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.NormBottom">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.NormLeft">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.NormRight">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.NormTop">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.ShowCommand">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType2.Any">
+            <remarks/>
+        </member>
+        <member name="T:BlueToque.Utility.Win32.RECT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.RECT.Left">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.RECT.Top">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.RECT.Right">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.RECT.Bottom">
+            <summary> </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.RECT.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="left_"></param>
+            <param name="top_"></param>
+            <param name="right_"></param>
+            <param name="bottom_"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.RECT.ToRectangle">
+            <summary>
+            Handy method for converting to a System.Drawing.Rectangle
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.RECT.FromRectangle(System.Drawing.Rectangle)">
+            <summary>
+            
+            </summary>
+            <param name="rectangle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.RECT.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.RECT.op_Implicit(BlueToque.Utility.Win32.RECT)~System.Drawing.Rectangle">
+            <summary>
+            
+            </summary>
+            <param name="rect"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Win32.RECT.op_Implicit(System.Drawing.Rectangle)~BlueToque.Utility.Win32.RECT">
+            <summary>
+            
+            </summary>
+            <param name="rect"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BlueToque.Utility.Win32.RECT.Height">
+            <summary> </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Win32.RECT.Width">
+            <summary> </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Win32.RECT.Size">
+            <summary> </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Win32.RECT.Location">
+            <summary> </summary>
+        </member>
+        <member name="T:CustomTextWriterTraceListener">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CustomTextWriterTraceListener.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:CustomTextWriterTraceListener.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:CustomTextWriterTraceListener.Write(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:CustomTextWriterTraceListener.Write(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="category"></param>
+        </member>
+        <member name="M:CustomTextWriterTraceListener.WriteLine(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:CustomTextWriterTraceListener.WriteLine(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="category"></param>
+        </member>
+        <member name="T:BlueToque.Utility.AssemblyLoader">
+            <summary>
+            Loads assemblies
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.AssemblyLoader.GetType``1(System.String,System.String)">
+            <summary>
+            Get a type from the given assembly with the given name, return it cast as the given type
+            This is used to get an type by name that implements in interface which is passed in the 
+            generic parameter.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="assembly"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.SingleInstance">
+            <summary>
+            A class to assist in instantiating executables that have a single instance
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.SingleInstance.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:BlueToque.Utility.SingleInstance.Check">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.SingleInstance.Release">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PersistWindowState">
+            <summary>
+            Persis a window's visibility and placement settings
+            </summary>
+        </member>
+        <member name="M:PersistWindowState.EnsureFormVisible(System.Windows.Forms.Form)">
+            <summary>
+            Ensure a form is visible on the screen
+            </summary>
+            <param name="form"></param>
+        </member>
+        <member name="M:PersistWindowState.LoadSettings(System.Windows.Forms.Form,System.String)">
+            <summary>
+            Load the form's placement settings from the given file
+            </summary>
+            <param name="form"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:PersistWindowState.SaveSettings(System.Windows.Forms.Form,System.String)">
+            <summary>
+            Save a form's window placement to the given file
+            </summary>
+            <param name="form"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="T:BlueToque.Utility.ExceptionManager">
+            <summary>
+            Generic way to handle exceptions
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.ExceptionManager.CriticalException(System.Exception)">
+            <summary>
+            Logs the critical exception, and optionally re-throws it
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ExceptionManager.CriticalException(System.String,System.Exception)">
+            <summary>
+            Logs the critical exception, and optionally re-throws it
+            </summary>
+            <param name="formatString"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BlueToque.Utility.ExceptionManager.Throw">
+            <summary>
+            Indicates if this class should re-throw exceptions
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.DomainManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.DomainManager.DomainData.AppDomain">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.DomainManager.DomainData.ReferenceCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.LazySingletonBase`1">
+            <summary>
+            A singleton generic base class that implements serialization
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:BlueToque.Utility.Serializable`1">
+            <summary>
+            A base class to inherit from that adds methods to perform serialization tasks
+            Handles both XML and Binary serialization
+            </summary>
+            <typeparam name="T">The serializable type</typeparam>
+        </member>
+        <member name="T:BlueToque.Utility.Equatable`1">
+            <summary>
+            A class that implements methods that assist with
+            determining equatability
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:BlueToque.Utility.Equatable`1.Equals(`0)">
+            <summary>
+            Is this object equal to another object.
+            Overide this method to do field by field comparisons
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Equatable`1.Equals(System.Object)">
+            <summary>
+            Equality
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Equatable`1.op_Equality(BlueToque.Utility.Equatable{`0},BlueToque.Utility.Equatable{`0})">
+            <summary>
+            Equals operator
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Equatable`1.op_Inequality(BlueToque.Utility.Equatable{`0},BlueToque.Utility.Equatable{`0})">
+            <summary>
+            Not equals operator
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Equatable`1.GetHashCode">
+            <summary>
+            override this to provide a more appropriate hash code
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.OnPreSerialize">
+            <summary>
+            Called prior to serialization, can be sued to trim unnecessary entries
+            from the obejct model prior to serialization
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.OnPostDeserialize">
+            <summary>
+            Called after this instance is deserialized
+            Can be used to fix up class if there are references
+            that need to be resolved
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.OnCreated">
+            <summary>
+            Override this method to control how this class is created
+            for instance, instead of calling new(), read the instance from
+            a resource or database
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.OnPostSerialize">
+            <summary>
+            Called after the object is serialized
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.CallPostDeserialize(`0)">
+            <summary>
+            Call the post serialize method
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.CallPostDeserialize(`0,System.String)">
+            <summary>
+            Call the post serialize method
+            </summary>
+            <param name="value">the value to post serialize</param>
+            <param name="source">the source of the deserialized value</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.Create">
+            <summary>
+            Create a new instance, and call the Created method
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:BlueToque.Utility.Serializable`1.SerializationSource">
+            <summary>
+            Records the source that the deserialized object came from
+            {stream} is a stream
+            {xml} is an xml element
+            {string} is a string (the original string is not stored)
+            {file} followed by a path is a file
+            {binaryFile} followed by a path is a binary file
+            {binaryStream} is a binary stream
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromXml(System.String)">
+            <summary>
+            Load from XML string
+            </summary>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromFile(System.String)">
+            <summary>
+            Load from file
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromStream(System.IO.Stream)">
+            <summary>
+            Load from stream
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromElement(System.Xml.XmlElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromXmlDocument(System.Xml.XmlDocument)">
+            <summary>
+            Load from an XML Document
+            </summary>
+            <param name="xmlDoc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromElement(System.Xml.XmlElement,System.Type[])">
+            <summary>
+            Deserialize from the given element using the given supplemental types
+            </summary>
+            <param name="element"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromBinaryFile(System.String)">
+            <summary>
+            Deserialize the object from a file of binary data
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.FromBinaryStream(System.IO.Stream)">
+            <summary>
+            Deserialize the object from a file of binary data
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.ToFile(System.String)">
+            <summary>
+            Serialize to a file
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.ToStream(System.IO.Stream)">
+            <summary>
+            Serialize to a stream
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.ToXml">
+            <summary>
+            Serialize to an XML String
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.ToElement">
+            <summary>
+            Serialize to an XML Element
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.ToXmlDocument">
+            <summary>
+            Serialize to an XmlDocument
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.ToBinaryFile(System.String)">
+            <summary>
+            Serialize the object to the given file
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.ToBinaryStream(System.IO.Stream)">
+            <summary>
+            Serialize the object to the stream
+            The stream should be a binary one
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.Clone">
+            <summary>
+            A serializable class can implement cloneing easily by serializing and then
+            deserializing. This should create an identical class from the source 
+            object model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializable`1.System#ICloneable#Clone">
+            <summary>
+            Clone this object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BlueToque.Utility.Serializable`1.Namespaces">
+            <summary>
+            The namespaces to use for serialization
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.Serializable`1.SerializationSources">
+            <summary>
+            Serialization sources
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Serializable`1.SerializationSources.File">
+            <summary>
+            Object deserialized from an xml file
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Serializable`1.SerializationSources.Stream">
+            <summary>
+            Object deserialized from an xml stream
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Serializable`1.SerializationSources.Xml">
+            <summary>
+            Object deserialized from an xml document or element
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Serializable`1.SerializationSources.BinaryFile">
+            <summary>
+            Object deserialized from a binary file
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Serializable`1.SerializationSources.BinaryStream">
+            <summary>
+            Object deserialized from a binary stream
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Serializable`1.SerializationSources.String">
+            <summary>
+            Object deserialized from an XML string
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.LazySingletonBase`1.Instance">
+            <summary>
+            Get an instance of the class
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.Paths">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.APPLICATION_DATA_TAG">
+            <summary> 
+            Local user application data
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.COMMONAPPLICATION_DATA_TAG">
+            <summary> 
+            Common application data shared among all users
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.MY_DOCUMENTS_TAG">
+            <summary> 
+            My Documents 
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.APPLICATION_DIRECTORY_TAG">
+            <summary> 
+            Startup folder: path to the executable
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.PERSONAL_TAG">
+            <summary>
+            The Personal data folder, or "My Documents
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.COMMON_DOCUMENTS_TAG">
+            <summary>
+            Common documents visible to all users
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.USER_PROFILE_TAG">
+            <summary>
+            User profile directory
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.WINDOWS_TAG">
+            <summary>
+            The windows directory
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.SYSTEM_TAG">
+            <summary>
+            The system directory
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.TEMP_TAG">
+            <summary>
+            The temporary directory
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.DATE_TAG">
+            <summary>
+            The date tag is used to replace the tag with the current date
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.TIME_TAG">
+            <summary>
+            The time tag is used to replace the tag with the current time
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.DATETIME_TAG">
+            <summary>
+            DateTime tag replaces the path tag with the current date and time
+            the string is made safe for paths, files and directory names
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.#cctor">
+            <summary>
+            static constructor
+            Set up the tag replacement array
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.DateString(System.String)">
+            <summary>
+            Returns a path safe date string
+            </summary>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.TimeString(System.String)">
+            <summary>
+            returns a path safe time string
+            </summary>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.DateTimeString(System.String)">
+            <summary>
+            returns a path safe datetime string
+            </summary>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.GetParent(System.String)">
+            <summary>
+            Get the parent directory of the given path
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="F:BlueToque.Utility.Paths.tags">
+            <summary>
+            The list of valid replaceable tags
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.Register(System.String,System.String)">
+            <summary>
+            Register a tag in the list of valid tags
+            </summary>
+            <param name="tag"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.Register(System.String,System.Func{System.String,System.String})">
+            <summary>
+            Register a tag in the Paths replacement structure
+            </summary>
+            <param name="tag"></param>
+            <param name="del"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.Expand(System.String)">
+            <summary>
+            Expand a tag into the correct directory name
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.CopyDirectory(System.String,System.String)">
+            <summary>
+            Copy one directory to another, recursively
+            </summary>
+            <param name="source"></param>
+            <param name="destination"></param>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.ApplicationDirectory">
+            <summary>
+            Gets the path for the executable file that started the application, including
+            the executable name
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.CommonApplicationData">
+            <summary>
+            Gets the path for the application data that is shared among all users
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.ApplicationData">
+            <summary>
+            Gets the path for the application data of a local, non-roaming user
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.MyDocuments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.Personal">
+            <summary>
+            The directory that serves as a common repository for documents
+            C:\Users\User\Documents
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.CommonDocuments">
+            <summary>
+            CommonDocuments = C:\Users\Public\Documents
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.UserProfile">
+            <summary>
+            UserProfile = C:\Users\UserName
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.Windows">
+            <summary>
+            C:\Windows
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.System">
+            <summary>
+            C:\Windows\system32
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Paths.Temp">
+            <summary>
+            The temporary directory
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.Paths.PathVar">
+            <summary>
+            A tag/value tuple
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Paths.PathVar.#ctor(System.String,System.Func{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="tag"></param>
+            <param name="del"></param>
+        </member>
+        <member name="T:BlueToque.Utility.FormattableObject">
+            <summary>
+            From http://www.hanselman.com/blog/PermaLink,guid,2a0fdc2c-6b15-4a46-a802-0ebc0b8662d9.aspx
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.FormattableObject.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.FormattableObject.ToString(System.Object,System.String,System.IFormatProvider)">
+            <summary>
+            
+            </summary>
+            <param name="anObject"></param>
+            <param name="aFormat"></param>
+            <param name="formatProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.FormattableObject.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <param name="formatProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.FormattableObject.ToString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.TraceSourceCollection">
+            <summary>
+            A collection of <see cref="T:System.Diagnostics.TraceSource"/>
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.Base32">
+            <summary>
+            Encode something using Base32 encoding
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Base32.ToBase32String(System.Byte[])">
+            <summary>
+            Converts an array of bytes to a Base32-k string.
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Base32.FromBase32String(System.String)">
+            <summary>
+            Converts a Base32-k string into an array of bytes.
+            </summary>
+            <exception cref="T:System.ArgumentException">
+            Input string <paramref name="str">str</paramref> contains invalid Base32-k characters.
+            </exception>
+        </member>
+        <member name="T:BlueToque.Utility.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Properties.Resources.Error_CreateEventLog">
+            <summary>
+              Looks up a localized string similar to Error creating event log for service {0}: {1}.
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Properties.Resources.Error_WritingEventLog">
+            <summary>
+              Looks up a localized string similar to Error writing event log: {0}.
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.Data.FormSettingsType">
+            <remarks/>
+        </member>
+        <member name="M:BlueToque.Utility.Data.FormSettingsType.RaisePropertyChanged(System.String)">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType.formPositionField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType.windowStateField">
+            <summary />
+        </member>
+        <member name="F:BlueToque.Utility.Data.FormSettingsType.anyField">
+            <summary />
+        </member>
+        <member name="M:BlueToque.Utility.Data.FormSettingsType.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:BlueToque.Utility.Data.FormSettingsType.PropertyChanged">
+            <summary />
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType.FormPosition">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType.WindowState">
+            <remarks/>
+        </member>
+        <member name="P:BlueToque.Utility.Data.FormSettingsType.Any">
+            <remarks/>
+        </member>
+        <member name="T:BlueToque.Utility.GuidEncoder">
+            <summary>
+            http://csharpfeeds.com/post/4382/A_shorter_and_URL_friendly_GUID.aspx
+            Encode and decode a GUID as Base64, remote extraneous characters
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.GuidEncoder.Encode64(System.String)">
+            <summary>
+            Encode using Base64
+            </summary>
+            <param name="guidText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.GuidEncoder.Encode64(System.Guid)">
+            <summary>
+            Encode using Base64
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.GuidEncoder.Decode64(System.String)">
+            <summary>
+            Decode using Base64
+            </summary>
+            <param name="encoded"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.GuidEncoder.Encode32(System.Guid)">
+            <summary>
+            Encode using Base32
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.GuidEncoder.Decode32(System.String)">
+            <summary>
+            Decode from a base 32 string
+            </summary>
+            <param name="encoded"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.XsltHelper">
+            <summary>
+            Helpers for use with Microsoft XSLT processor
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.XsltHelper.Transform(System.String,System.String)">
+            <summary>
+            Transform the input XmlString to an output string using the given xslt string
+            Throws exceptions so higher-level constructs can handle them
+            </summary>
+            <param name="xmlString"></param>
+            <param name="xsltString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.XsltHelper.Transform(System.String,System.String,System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="xmlString"></param>
+            <param name="xsltString"></param>
+            <param name="stream"></param>
+        </member>
+        <member name="T:BlueToque.Utility.Serializer">
+            <summary>
+            This class presents the Xml serializer and deserializer wrapped using 
+            generic methods that introduce strong type checking.
+            
+            This class also caches the serializers that were created so they can be re-used
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.CreateSerializer(System.Type)">
+            <summary>
+            Create a serializer for the given type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.CreateSerializer(System.Type,System.Type[])">
+            <summary>
+            Create a serializer for the given type
+            If a property or field returns an array, the extraTypes parameter specifies objects that
+            can be inserted into the array.
+            </summary>
+            <param name="type"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize``1(System.IO.Stream)">
+            <summary>
+            Deserialize an object of the given type from the xml stream
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize``1(System.String)">
+            <summary>
+            Deserialize an instance of type T from the given xml string
+            </summary>
+            <typeparam name="T">the type to deserialize</typeparam>
+            <param name="xmlString">the xml string</param>
+            <returns>an instance of the type or NULL if any errors in the XML</returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize``1(System.Xml.XmlElement)">
+            <summary>
+            Deserialize an instance of type T from the given XmlElement
+            Caches the serializer so that further instances of this
+            call will be more efficient.
+            </summary>
+            <typeparam name="T">the type to deserialize</typeparam>
+            <param name="element">an XmlElement that contains the node to deserialize</param>
+            <returns>an instance of T deserialized from the XmlElement</returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize``1(System.IO.Stream,System.Type[])">
+            <summary>
+            Deserialize an object of the given type from the stream.
+            The extra types are used if the object is an array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize``1(System.String,System.Type[])">
+            <summary>
+            Deserialize an object of a given type from the xml string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xmlString"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize(System.Type,System.IO.Stream)">
+            <summary>
+            Deserialize an object of the given type from the stream
+            </summary>
+            <param name="type"></param>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize(System.Type,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize(System.Type,System.Xml.XmlReader)">
+            <summary>
+            Serialize an object of the given type to a string
+            </summary>
+            <param name="type">Type to Deserialize</param>
+            <param name="reader">XmlReader to use</param>
+            <returns>string containing the serialized obejct</returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize``1(System.Xml.XmlElement,System.Type[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="element"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Deserialize``1(System.IO.Stream,System.Type[],System.Xml.XmlReaderSettings)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream"></param>
+            <param name="types"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.DeserializeFromFile``1(System.String)">
+            <summary>
+            This method deserializes the contents of a file into the object of the given type
+            This method is used in preference to the base XmlSerializers because it's a generic 
+            version that introduces strong type checking, and caches the serializers.
+            </summary>
+            <typeparam name="T">Type of object to deserialize to</typeparam>
+            <param name="fileName">file name to read</param>
+            <returns>The deserialized object</returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(System.IO.Stream,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize(System.IO.Stream,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize(System.Xml.XmlWriter,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(``0,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="ns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(``0,System.Xml.XmlWriterSettings)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(System.IO.Stream,``0,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <param name="ns"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(``0,System.Xml.XmlWriterSettings,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="settings"></param>
+            <param name="ns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(System.IO.Stream,``0,System.Xml.XmlWriterSettings)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <param name="settings"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(System.IO.Stream,``0,System.Xml.XmlWriterSettings,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <param name="settings"></param>
+            <param name="ns"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize``1(System.Object,System.Type[],System.Xml.XmlWriterSettings,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="types"></param>
+            <param name="settings"></param>
+            <param name="ns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToElementDirect(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToElement``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToElement``1(``0,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="ns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToElement``1(``0,System.Xml.Serialization.XmlSerializerNamespaces,System.Type[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="ns"></param>
+            <param name="types"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.Serialize(System.Object,System.Xml.XmlWriterSettings)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToElement(System.Type,System.Object)">
+            <summary>
+            Serialize the object to an element
+            </summary>
+            <param name="type"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToFile``1(``0,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToFile``1(``0,System.String,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="fileName"></param>
+            <param name="ns"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToFile``1(``0,System.String,System.Xml.XmlWriterSettings)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="fileName"></param>
+            <param name="settings"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.SerializeToFile``1(``0,System.String,System.Xml.XmlWriterSettings,System.Xml.Serialization.XmlSerializerNamespaces)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="fileName"></param>
+            <param name="settings"></param>
+            <param name="ns"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.BinarySerialize``1(``0,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Serializer.BinaryDeserialize``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BlueToque.Utility.Serializer.CacheSerializers">
+            <summary>
+            A flag indicating weather to cache the serializers.
+            Serializers are cached by default. This means that any calls to
+            Serialize or Deserialize will create a class, and this class will 
+            be saved in a dictionary so that further calls to serialize or 
+            deserialize the class will be more efficient
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.General">
+            <summary>
+            General utility methods
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.General.Is64BitMode">
+            <summary>
+            Returns true if the current assembly/program is loaded into the 64 bit version fo the CLR
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.ShortGuid">
+            <summary>
+            http://www.singular.co.nz/blog/archive/2007/12/20/shortguid-a-shorter-and-url-friendly-guid-in-c-sharp.aspx
+            Represents a globally unique identifier (GUID) with a
+            shorter string value. Sguid
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.ShortGuid.Empty">
+            <summary>
+            A read-only instance of the ShortGuid class whose value
+            is guaranteed to be all zeroes.
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.#ctor(System.String)">
+            <summary>
+            Creates a ShortGuid from a base64 encoded string
+            </summary>
+            <param name="value">The encoded guid as a
+            base64 string</param>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.#ctor(System.Guid)">
+            <summary>
+            Creates a ShortGuid from a Guid
+            </summary>
+            <param name="guid">The Guid to encode</param>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.ToString">
+            <summary>
+            Returns the base64 encoded guid as a string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance and a
+            specified Object represent the same type and value.
+            </summary>
+            <param name="obj">The object to compare</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.GetHashCode">
+            <summary>
+            Returns the HashCode for underlying Guid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.NewGuid">
+            <summary>
+            Initialises a new instance of the ShortGuid class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.Encode(System.String)">
+            <summary>
+            Creates a new instance of a Guid using the string value,
+            then returns the base64 encoded version of the Guid.
+            </summary>
+            <param name="value">An actual Guid string (i.e. not a ShortGuid)</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.Encode(System.Guid)">
+            <summary>
+            Encodes the given Guid as a base64 string that is 22
+            characters long.
+            </summary>
+            <param name="guid">The Guid to encode</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.Decode(System.String)">
+            <summary>
+            Decodes the given base64 string
+            </summary>
+            <param name="value">The base64 encoded string of a Guid</param>
+            <returns>A new Guid</returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.op_Equality(BlueToque.Utility.ShortGuid,BlueToque.Utility.ShortGuid)">
+            <summary>
+            Determines if both ShortGuids have the same underlying
+            Guid value.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.op_Inequality(BlueToque.Utility.ShortGuid,BlueToque.Utility.ShortGuid)">
+            <summary>
+            Determines if both ShortGuids do not have the
+            same underlying Guid value.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.op_Implicit(BlueToque.Utility.ShortGuid)~System.String">
+            <summary>
+            Implicitly converts the ShortGuid to it's string equivilent
+            </summary>
+            <param name="shortGuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.op_Implicit(BlueToque.Utility.ShortGuid)~System.Guid">
+            <summary>
+            Implicitly converts the ShortGuid to it's Guid equivilent
+            </summary>
+            <param name="shortGuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.op_Implicit(System.String)~BlueToque.Utility.ShortGuid">
+            <summary>
+            Implicitly converts the string to a ShortGuid
+            </summary>
+            <param name="shortGuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ShortGuid.op_Implicit(System.Guid)~BlueToque.Utility.ShortGuid">
+            <summary>
+            Implicitly converts the Guid to a ShortGuid
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BlueToque.Utility.ShortGuid.Guid">
+            <summary>
+            Gets/sets the underlying Guid
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.ShortGuid.Value">
+            <summary>
+            Gets/sets the underlying base64 encoded string
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.XmlWriterTraceListener">
+            <summary>
+            Custom XmlWriterTraceListener
+            This one merely expands the path to the log file using the Paths class
+            This lets the user configure the path to a system directory and to 
+            set the date and time on the log file.
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.#ctor(System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.#ctor(System.IO.TextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filename"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.#ctor(System.IO.TextWriter,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.Write(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.Write(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <param name="category"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.Write(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.Write(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="category"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.WriteLine(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.WriteLine(System.Object,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <param name="category"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.WriteLine(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.WriteLine(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="category"></param>
+        </member>
+        <member name="M:BlueToque.Utility.XmlWriterTraceListener.ClearOldFiles(System.String)">
+            <summary>
+            delete old log files
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="P:BlueToque.Utility.XmlWriterTraceListener.FileName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.TraceSourceManager">
+            <summary>
+            A class to manage <see cref="T:System.Diagnostics.TraceSource"/> at runtime.
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.TraceSourceManager.Add(System.Diagnostics.TraceSource)">
+            <summary>
+            Add a <see cref="T:System.Diagnostics.TraceSource"/> to the collection
+            </summary>
+            <param name="traceSource"></param>
+        </member>
+        <member name="P:BlueToque.Utility.TraceSourceManager.Instance">
+            <summary>
+            The singleton instance
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.TraceSourceManager.Sources">
+            <summary>
+            The collection of <see cref="T:System.Diagnostics.TraceSource"/>
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.ExtractIcon">
+            <summary>
+            Extract an icon from a file path
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.ExtractIcon.GetIcon(System.String,System.Boolean)">
+            <summary>
+            Get the icon from the given path
+            </summary>
+            <param name="strPath">The file path</param>
+            <param name="bSmall">Get the small icon if true</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ExtractIcon.GetImage(System.String,System.Boolean)">
+            <summary>
+            Get the icon as an image from the given path
+            </summary>
+            <param name="strPath">the path</param>
+            <param name="bSmall">get the small image if true</param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.AssemblyInfo">
+            <summary>
+            Get the assembly metadata
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.AssemblyInfo.#ctor">
+            <summary>
+            Get the assembly info for the current (calling) assembly
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.AssemblyInfo.#ctor(System.Type)">
+            <summary>
+            Get the assembly info for the given assembly
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:BlueToque.Utility.AssemblyInfo.#ctor(System.Reflection.Assembly)">
+            <summary>
+            Get the assembly info for the given assembly
+            </summary>
+            <param name="assembly"></param>
+        </member>
+        <member name="M:BlueToque.Utility.AssemblyInfo.Create(System.Type)">
+            <summary>
+            Create an assembly info from a type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.AssemblyInfo.Create(System.Object)">
+            <summary>
+            Create an assemblyInfo from an object
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.AssemblyInfo.Create(System.Reflection.Assembly)">
+            <summary>
+            Create an assemblyInfo from an assembly
+            </summary>
+            <param name="assembly"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Assembly">
+            <summary>
+            The assembly
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Version">
+            <summary>
+            Get the version string
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.FileVersion">
+            <summary>
+            Get the file version string
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.ProductVersion">
+            <summary>
+            Get the product version string
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Product">
+            <summary>
+            get the product string
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Description">
+            <summary>
+            Get the description
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Title">
+            <summary>
+            Get the title
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Company">
+            <summary>
+            Get the company
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Copyright">
+            <summary>
+            Get the copyright
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.TradeMark">
+            <summary>
+            Get the trademark
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.AssemblyInfo.Configuration">
+            <summary>
+            Get the configuration
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.Win32.WINDOWPLACEMENT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.WINDOWPLACEMENT.length">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.WINDOWPLACEMENT.flags">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.WINDOWPLACEMENT.showCmd">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.WINDOWPLACEMENT.ptMinPosition">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.WINDOWPLACEMENT.ptMaxPosition">
+            <summary> </summary>
+        </member>
+        <member name="F:BlueToque.Utility.Win32.WINDOWPLACEMENT.rcNormalPosition">
+            <summary> </summary>
+        </member>
+        <member name="P:BlueToque.Utility.Win32.WINDOWPLACEMENT.Default">
+            <summary> </summary>
+        </member>
+        <member name="T:BlueToque.Utility.SingletonBase`1">
+            <summary>
+            A singleton generic base class that implements serialization
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:BlueToque.Utility.SingletonBase`1.Instance">
+            <summary>
+            Get an instance of the class
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.ObjectHelper">
+            <summary>
+            Helper methods for objects
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.ObjectHelper.Copy``1(``0)">
+            <summary>
+            Copy an object of a given type by cloning
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ObjectHelper.Clone``1(``0)">
+            <summary>
+            Deep copy an object by serializing it using a binary formatter,
+            and deserializing it into another instance
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ObjectHelper.DeepClone``1(``0,System.Object[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="original"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.ObjectHelper.CopyObject``1(System.Object,``0@)">
+            <summary>
+            http://www.csharpbydesign.com/2008/03/generic-c-object-copy-function.html
+            Copy an object to destination object, only matching fields will be copied
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sourceObject">An object with matching fields of the destination object</param>
+            <param name="destObject">Destination object, must already be created</param>
+        </member>
+        <member name="T:BlueToque.Utility.EventLogManager">
+            <summary>
+            Manage the creation of and writing messages to the event log
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.EventLogManager.CreateEventLog(System.String)">
+            <summary>
+            Create the event log with the given service name
+            </summary>
+            <param name="serviceName"></param>
+        </member>
+        <member name="M:BlueToque.Utility.EventLogManager.WriteEntry(System.String,System.Diagnostics.EventLogEntryType)">
+            <summary>
+            Write an entry to the event log
+            </summary>
+            <param name="message">The text message to write to the event log</param>
+            <param name="type">The event log entry type</param>
+        </member>
+        <member name="M:BlueToque.Utility.EventLogManager.WriteEntry(System.String,System.Diagnostics.EventLogEntryType,System.Int32)">
+            <summary>
+            Write an entry to the event log
+            </summary>
+            <param name="message">The text message to write</param>
+            <param name="type">The event log entry type</param>
+            <param name="eventID">The event ID</param>
+        </member>
+        <member name="P:BlueToque.Utility.EventLogManager.Current">
+            <summary>
+            Singletong access to the event log
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.CustomTextWriterTraceListener">
+            <summary>
+            Trace listener that logs results to a CSV file
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.CustomTextWriterTraceListener.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:BlueToque.Utility.CustomTextWriterTraceListener.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="file"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:BlueToque.Utility.CustomTextWriterTraceListener.Write(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BlueToque.Utility.CustomTextWriterTraceListener.WriteLine(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="category"></param>
+        </member>
+        <member name="M:BlueToque.Utility.CustomTextWriterTraceListener.Write(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="category"></param>
+        </member>
+        <member name="M:BlueToque.Utility.CustomTextWriterTraceListener.WriteLine(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:BlueToque.Utility.Trace">
+             <summary>
+             A Facade class to control trace
+             This allows us to turn on or off trace for this module only,
+             and to control what level of trace comes from this module (Info, Warning, Error, etc)
+             
+             For instance, to configure this class to show all Informaional messages do the following:
+             
+             Configure the source, and the switch that we will be using
+             Also adds a listener
+              <source name="BlueToque.Utility" switchName="SourceSwitch" switchType="System.Diagnostics.SourceSwitch" >
+                <listeners>
+                  <add name="BriyanteConsole" />
+                </listeners>
+              </source>
+             
+              <switches>
+              <!-- You can set the level at which tracing is to occur or you can turn tracing off -->
+              <!--
+              These kind of events are published:
+                TraceEventType.Critical:    Critical error, probably misconfigured program or requires restart
+                TraceEventType.Error:       An error that the system can handle but needs to report
+                TraceEventType.Information: Informational message about processing 
+                TraceEventType.Verbose:     Messages about everything
+               TraceEventType.Warning:     Minor conditions that the system can handle
+                TraceEventType.Start, Stop, Suspend, Transfer, Resume: Activity tracing events
+            
+              Set the following flag to one of these values to capture events:
+                ActivityTracing  Allows the Stop, Start, Suspend, Transfer, and Resume events through.  
+                All              Allows all events through.  
+                Critical         Allows only Critical events through.  
+                Error            Allows Critical and Error events through.  
+                Information      Allows Critical, Error, Warning, and Information events through.  
+                Off              Does not allow any events through.  
+                Verbose          Allows Critical, Error, Warning, Information, and Verbose events through.  
+                Warning          Allows Critical, Error, and Warning events through.  
+                
+                  SourceLevel is set to 3 ("Error") by default
+              -->
+              <add name="SourceSwitch" value="Information" />
+            </switches>
+             
+             </summary>    
+        </member>
+        <member name="T:BlueToque.Utility.Extensions">
+            <summary>
+            Useful extension methods.
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.AddItem(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Add a string to a list of strings.
+            </summary>
+            <param name="list"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.AddItem``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Add a generic item to a generic list
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.GetCustomAttribute``1(System.Reflection.Assembly)">
+            <summary>
+            Get a custom attribute of the given type from the given assembly
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="asm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.AddNamespace(System.Xml.Serialization.XmlSerializerNamespaces,System.String,System.String)">
+            <summary>
+            Fluent way to add a namespace to an XmlSerializerNamespaces structure
+            </summary>
+            <param name="ns"></param>
+            <param name="prefix"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.Write7BitInt(System.IO.BinaryWriter,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.Read7BitInt(System.IO.BinaryReader)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.BeginUIThread(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)">
+            <summary>
+            Invoke a method on a form in the UI Thread
+            </summary>
+            <param name="form"></param>
+            <param name="code"></param>
+            <returns>True on success</returns>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.UIThread(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)">
+            <summary>
+            Invoke a method on a form in the UI Thread
+            </summary>
+            <param name="form"></param>
+            <param name="code"></param>
+            <returns>True on success</returns>
+        </member>
+        <member name="M:BlueToque.Utility.Extensions.DoForAll``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Execute an action on each item in an Enumerable collection
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="items"></param>
+            <param name="pPerfomAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueToque.Utility.EventHelper">
+            <summary>
+            The event firing class contains methods and properties for safe
+            cross-thread event firing
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.EventHelper.OnError(System.Object,System.Exception)">
+            <summary>
+            Call the error event
+            </summary>
+            <param name="sender"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:BlueToque.Utility.EventHelper.FireEvent``1(System.Delegate,``0,System.Object)">
+            <summary>
+            Fire an event
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="eventToFire"></param>
+            <param name="input"></param>
+            <param name="sender"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.EventHelper.FireEvent``1(System.Delegate,``0,System.Object,System.Boolean)">
+            <summary>
+            Fires the specified event, and passes the input as a parameter.
+            </summary>
+            <typeparam name="T">Type of the input parameter.</typeparam>
+            <param name="eventToFire">The event to fire.</param>
+            <param name="input">The input.</param>
+            <param name="sender">The sender</param>
+            <param name="asyncInvoke"></param>
+        </member>
+        <member name="M:BlueToque.Utility.EventHelper.QuickFire``1(System.Delegate,``0,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="eventToFire"></param>
+            <param name="input"></param>
+            <param name="sender"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.EventHelper.GetAllEvents(System.Type)">
+            <summary>
+            Get all events from the object and from all base classes
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueToque.Utility.EventHelper.UnregisterAll(System.Object,System.Boolean)">
+            <summary>
+            Unregister all of the events in an object
+            </summary>
+            <param name="obj"></param>
+            <param name="baseClasses"></param>
+        </member>
+        <member name="P:BlueToque.Utility.EventHelper.AsyncInvoke">
+            <summary>
+            use the asynchronous cross thread nivokation, when
+            cross thread invoke is necessary
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.EventHelper.LastException">
+            <summary>
+            Retrieve the last exception handled by this class
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.EventHelper.ThrowExceptions">
+            <summary>
+            Weather or not exceptions should eb thrown by this class, false by default
+            </summary>
+        </member>
+        <member name="E:BlueToque.Utility.EventHelper.Error">
+            <summary>
+            The error event can be hooked to handle exceptions handled by this class
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.DebugTraceListener">
+            <summary>
+            A trace listener that you can use to subscribe to events from the 
+            Trace system. Basically, ad an event handlers to the static TraceMessage
+            event, and all trace events will be sen to your event handler
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.DebugTraceListener.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.DebugTraceListener.Write(System.String)">
+            <summary>
+            Write a message to the trace listener
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BlueToque.Utility.DebugTraceListener.WriteLine(System.String)">
+            <summary>
+            Write a line to the trace listener
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BlueToque.Utility.DebugTraceListener.WriteBase(System.String)">
+            <summary>
+            The base write method
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:BlueToque.Utility.DebugTraceListener.Start">
+            <summary>
+            Create a TraceListener, and add it to the collection
+            </summary>
+        </member>
+        <member name="E:BlueToque.Utility.DebugTraceListener.TraceMessage">
+            <summary>
+            Handle this event to receive messages
+            </summary>
+        </member>
+        <member name="P:BlueToque.Utility.DebugTraceListener.Buffer">
+            <summary>
+            The buffer that contains trace messages that have nt been output 
+            (messages will accumulate here untill an event is fired and empties the buffer)
+            
+            </summary>
+        </member>
+        <member name="T:BlueToque.Utility.TraceEventArgs">
+            <summary>
+            Event args that contain a string message
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.TraceEventArgs.#ctor">
+            <summary>
+            Default constructor (for selialization
+            </summary>
+        </member>
+        <member name="M:BlueToque.Utility.TraceEventArgs.#ctor(System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="P:BlueToque.Utility.TraceEventArgs.Message">
+            <summary>
+            The string message
+            </summary>
+        </member>
+    </members>
+</doc>

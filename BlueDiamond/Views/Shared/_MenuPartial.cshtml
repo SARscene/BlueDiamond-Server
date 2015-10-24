@@ -1,0 +1,28 @@
+﻿
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Blue Diamond", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Incidents", "Index", "Incidents")</li>
+                <li>@Html.ActionLink("Members", "Index", "Members")</li>
+                <li>@Html.ActionLink("Agencies", "Index", "Agency")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/Home/Time"><div id="date"></div></a></li>
+                <li><a href="/Home/Time"><div id="time"></div></a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>

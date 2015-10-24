@@ -1,0 +1,44 @@
+﻿@model BlueDiamond.Models.CheckInViewModel
+
+@{
+    ViewBag.Title = "SignIn Status";
+}
+
+<h2>SignIn Status for Incident @Html.DisplayFor(model=>model.Incident.TaskNumber)</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Last Name</th>
+            <th> First Name </th>
+            <th> Sign In Time </th>
+        </tr>
+        </thead>
+    <tbody id="update">
+        @foreach (var item in Model.SignIns)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Member.LastName) </td>
+                <td> @Html.DisplayFor(modelItem => item.Member.FirstName) </td>
+                <td> @Html.DisplayFor(modelItem => item.SignInTime) </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts {
+<script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+<script src="~/signalr/hubs"></script>
+<script type="text/javascript">
+    $(function () {
+        var events = $.connection.eventHub;
+        events.client.login = function (lastname, firstname, signintime) {
+            $('#update').prepend("<tr><td>" + lastname + "</td><td>" + firstname + "</td><td>" + signintime + "</td></tr>");
+        };
+
+        $.connection.hub.start().done(function () {
+            events.server.joinIncident("@Model.Incident.IncidentID.ToString()");
+        });
+
+    });
+</script>
+}

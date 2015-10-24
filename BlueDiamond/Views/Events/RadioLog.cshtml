@@ -1,0 +1,30 @@
+﻿@model BlueDiamond.Models.RadioLogViewModel
+
+@{
+    ViewBag.Title = "RadioLog";
+}
+
+<h2>Incident @Html.DisplayFor(x=>Model.Incident.TaskNumber) Radio Log</h2>
+
+@Html.Partial("_CreateRadioLog", Model.NewLog)
+
+<h3>Log</h3>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Time</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Message</th>
+    </tr>
+
+    @foreach (var item in Model.Log)
+    {
+        <tr>
+            <td class="col-md-2">@Html.DisplayFor(x => item.Core.Created)</td>
+            <td class="col-md-1">@Html.DisplayFor(x => item.From)</td>
+            <td class="col-md-1">@Html.DisplayFor(x => item.To)</td>
+            <td class="col-md-8">@Html.DisplayFor(x => item.Message)</td>
+        </tr>
+    }
+
+</table>

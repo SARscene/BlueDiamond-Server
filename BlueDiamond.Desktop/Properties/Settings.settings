@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TrueNorthX.Desktop.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Port" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">50123</Value>
+    </Setting>
+    <Setting Name="VirtualDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/</Value>
+    </Setting>
+    <Setting Name="ApplicationDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{ApplicationDirectory}/../../../TrueNorthX1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

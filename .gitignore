@@ -1,0 +1,6 @@
+BlueDiamond.Desktop/bin/*
+BlueDiamond.Desktop/obj/*
+*.suo
+BlueDiamond/bin/*
+DataModel/bin/*
+DataModel/obj/*

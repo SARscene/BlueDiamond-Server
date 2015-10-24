@@ -1,0 +1,60 @@
+﻿@model BlueDiamond.DataModel.MessageData
+
+<h3>Enter</h3>
+<div class="well">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Data)
+
+            <div class="col-md-1">
+                @Html.EditorFor(model => model.From, new { htmlAttributes = new { @class = "form-control", placeholder = "From" } })
+                @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1">
+                @Html.EditorFor(model => model.To, new { htmlAttributes = new { @class = "form-control", placeholder = "To" } })
+                @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", placeholder = "Message" } })
+                @*@Html.TextAreaFor(model => model.Message, new { @class = "form-control", placeholder = "Message" })*@
+                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    }
+</div>
+@*
+    @using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-inline">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Data)
+
+        <div class="form-group">
+            @Html.EditorFor(model => model.From, new { htmlAttributes = new { @class = "form-control", placeholder = "From" } })
+            @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.To, new { htmlAttributes = new { @class = "form-control", placeholder = "To" } })
+            @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", placeholder = "Message" } })
+            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+    
+    *@
+

@@ -1,0 +1,63 @@
+﻿@model BlueDiamond.Models.IncidentEventsViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                @*@Html.Partial("_createEvent2", new BlueDiamond.EMIS.DataModel.Event())*@
+            </div>
+            <div class="col-md-12">
+                <div id="event-list" data-bind="template: {name: 'eventTemplate', foreach: events}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div id="right-sidebar">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Incident</h3>
+                </div>
+                <table class="table table-hover">
+                    <tr>
+                        <td>Incident</td>
+                        <td>@Html.DisplayFor(x => x.Incident)</td>
+                    </tr>
+                    <tr>
+                        <td>Agency</td>
+                        <td>@Html.DisplayFor(x => x.Agency)</td>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td>@Html.DisplayFor(x => x.Agent)</td>
+                    </tr>
+                    <tr>
+                        <td>Role</td>
+                        <td>@Html.DisplayFor(x => x.Agent.Role)</td>
+                    </tr>
+                </table>
+                <div class="panel-footer"></div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title">Alerts</h3></div>
+                <div class="panel-body">
+                    <div id="alert-list" data-bind="template: {name: 'alertTemplate', foreach: alerts}">
+                    </div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

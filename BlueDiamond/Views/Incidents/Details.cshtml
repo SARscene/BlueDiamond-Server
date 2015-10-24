@@ -1,0 +1,38 @@
+﻿@model BlueDiamond.DataModel.Incident
+
+@{
+    ViewBag.Title = "Incident";
+}
+
+@Html.Partial("_Incident", Model)
+<hr/>
+<div class="row">
+    <div class="col-md-2">
+        @if(Model.IsOpen) 
+        {
+            @Html.ActionLink("Close", "Close", "Incidents", new { id = Model.IncidentID }, new { @class = "btn btn-primary" })
+        }
+        else 
+        {
+            @Html.ActionLink("Open", "Open", "Incidents", new { id = Model.IncidentID }, new { @class = "btn btn-success" })
+        }
+    </div>
+    <div class="col-md-2">
+        <p>@Html.ActionLink("Sign In", "SignIn", "Incidents", new { id = Model.IncidentID }, new { @class = "btn btn-default" }) </p>
+    </div>
+    <div class="col-md-2">
+        <p>@Html.ActionLink("Radio Log", "RadioLog", "Events", new { id = Model.IncidentID }, new { @class = "btn btn-default" }) </p>
+    </div>
+    <div class="col-md-2">
+        <p>@Html.ActionLink("Sign In Status", "SignInStatus", "Incidents", new { id = Model.IncidentID }, new { @class = "btn btn-default" }) </p>
+    </div>
+    <div class="col-md-2">
+        <p>@Html.ActionLink("Edit", "Edit", new { id = Model.IncidentID }, new { @class = "btn btn-default" })</p>
+    </div>
+    <div class="col-md-2">
+        <p>@Html.ActionLink("Tracks", "Index", "Tracks", new { id = Model.IncidentID }, new { @class = "btn btn-default" })</p>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

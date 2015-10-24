@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{8EC9F26F-8C74-4351-94D6-0D4C280E4CCA}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{15740ABE-B8E1-4F5C-8064-784F6BA5435A}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\TrueNorthX1-WAWS-dev.json = PublishScripts\Configurations\TrueNorthX1-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{6A0374C2-17A6-47BE-84C3-7E045765F759}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueDiamond", "BlueDiamond\BlueDiamond.csproj", "{EE65023C-96B0-4EBD-9311-BA5E1F507FE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueDiamond.Desktop", "BlueDiamond.Desktop\BlueDiamond.Desktop.csproj", "{DC04928A-6208-4764-95B0-0F268BC703BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A0374C2-17A6-47BE-84C3-7E045765F759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A0374C2-17A6-47BE-84C3-7E045765F759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A0374C2-17A6-47BE-84C3-7E045765F759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A0374C2-17A6-47BE-84C3-7E045765F759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE65023C-96B0-4EBD-9311-BA5E1F507FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE65023C-96B0-4EBD-9311-BA5E1F507FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE65023C-96B0-4EBD-9311-BA5E1F507FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE65023C-96B0-4EBD-9311-BA5E1F507FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC04928A-6208-4764-95B0-0F268BC703BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC04928A-6208-4764-95B0-0F268BC703BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC04928A-6208-4764-95B0-0F268BC703BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC04928A-6208-4764-95B0-0F268BC703BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{15740ABE-B8E1-4F5C-8064-784F6BA5435A} = {8EC9F26F-8C74-4351-94D6-0D4C280E4CCA}
+	EndGlobalSection
+EndGlobal

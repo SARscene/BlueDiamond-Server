@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Forloop.HtmlHelpers</name>
+    </assembly>
+    <members>
+        <member name="T:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions">
+            <summary>
+                Methods for helping to manage scripts in partials and templates.
+            </summary>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.AddScriptBlock(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)">
+            <summary>
+                Adds a block of script to be rendered out at a later point in the page rendering when
+                <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> is called.
+            </summary>
+            <param name="htmlHelper">the <see cref="T:System.Web.Mvc.HtmlHelper"/></param>
+            <param name="scriptBlock">the block of script to render. The block must not include the &lt;script&gt; tags</param>
+            <param name="renderOnAjax">
+                if set to <c>true</c> and the request is an AJAX request, the script will be written in the response.
+            </param>
+            <remarks>
+                A call to <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> will render all scripts.
+            </remarks>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.AddScriptBlock(System.Web.Mvc.HtmlHelper,System.Func{System.Object,System.Web.WebPages.HelperResult},System.Boolean)">
+            <summary>
+                Adds a block of script to be rendered out at a later point in the page rendering when
+                <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> is called.
+            </summary>
+            <param name="htmlHelper">the <see cref="T:System.Web.Mvc.HtmlHelper"/></param>
+            <param name="scriptTemplate">
+                the template for the block of script to render. The template must include the &lt;script
+                &gt; tags
+            </param>
+            <param name="renderOnAjax">
+                if set to <c>true</c> and the request is an AJAX request, the script will be written in the response.
+            </param>
+            <remarks>
+                A call to <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> will render all scripts.
+            </remarks>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.AddScriptFile(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)">
+            <summary>
+                Adds a script file to be rendered out at a later point in the page rendering when
+                <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> is called.
+            </summary>
+            <param name="htmlHelper">the <see cref="T:System.Web.Mvc.HtmlHelper"/></param>
+            <param name="path">the path to the script file to render later</param>
+            <param name="renderOnAjax">
+                if set to <c>true</c> and the request is an AJAX request, the script will be written in the response.
+            </param>
+            <remarks>
+                A call to <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> will render all scripts.
+            </remarks>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.BeginScriptContext(System.Web.Mvc.HtmlHelper)">
+            <summary>
+                Begins a new <see cref="T:Forloop.HtmlHelpers.ScriptContext"/>. Used to signal that the scripts inside the
+                context belong in the same view, partial view or template
+            </summary>
+            <param name="htmlHelper">
+                the <see cref="T:System.Web.Mvc.HtmlHelper"/>
+            </param>
+            <returns>
+                a new instance of <see cref="T:Forloop.HtmlHelpers.ScriptContext"/>
+            </returns>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.EndScriptContext(System.Web.Mvc.HtmlHelper)">
+            <summary>
+                Ends a <see cref="T:Forloop.HtmlHelpers.ScriptContext"/>.
+            </summary>
+            <param name="htmlHelper">
+                the <see cref="T:System.Web.Mvc.HtmlHelper"/>
+            </param>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)">
+            <summary>
+                Renders the scripts out into the view using <see cref="M:System.Web.Mvc.UrlHelper.Content(System.String)"/>
+                to generate the paths in the &lt;script&gt; elements for the script files
+            </summary>
+            <param name="htmlHelper">
+                the <see cref="T:System.Web.Mvc.HtmlHelper"/>
+            </param>
+            <returns>
+                an <see cref="T:System.Web.IHtmlString"/> of all of the scripts.
+            </returns>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper,System.Func{System.String[],System.Web.IHtmlString})">
+            <summary>
+                Renders the scripts out into the view using the passed <paramref name="scriptPathResolver"/> function
+                to generate the &lt;script&gt; elements for the script files.
+            </summary>
+            <param name="htmlHelper">
+                the <see cref="T:System.Web.Mvc.HtmlHelper"/>
+            </param>
+            <param name="scriptPathResolver">
+                a function that is passed the script paths and is used to generate the markup for
+                the script elements
+            </param>
+            <returns>
+                an <see cref="T:System.Web.IHtmlString"/> of all of the scripts.
+            </returns>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.AddToScriptContext(System.Web.Mvc.HtmlHelper,System.Action{Forloop.HtmlHelpers.ScriptContext})">
+            <summary>
+                Performs an action on the current <see cref="T:Forloop.HtmlHelpers.ScriptContext"/>
+            </summary>
+            <param name="htmlHelper">
+                the <see cref="T:System.Web.Mvc.HtmlHelper"/>
+            </param>
+            <param name="action">the action to perform</param>
+        </member>
+        <member name="T:Forloop.HtmlHelpers.ScriptContext">
+            <summary>
+            A context in which to add references to script files and blocks of script
+            to be rendered to the view at a later point.
+            </summary>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptContext.#ctor(System.Web.HttpContextBase,System.IO.TextWriter)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Forloop.HtmlHelpers.ScriptContext"/> class.
+            </summary>
+            <param name="httpContext">The HTTP context.</param>
+            <param name="writer"></param>
+            <exception cref="T:System.ArgumentNullException">httpContext</exception>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptContext.AddScriptBlock(System.String,System.Boolean)">
+            <summary>
+                Adds a block of script to be rendered out at a later point in the page rendering when
+                <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> is called.
+            </summary>
+            <param name="scriptBlock">the block of script to render. The block must not include the &lt;script&gt; tags</param>
+            <param name="renderOnAjax">
+                if set to <c>true</c> and the request is an AJAX request, the script will be written in the response.
+            </param>
+            <remarks>
+                A call to <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> will render all scripts.
+            </remarks>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptContext.AddScriptBlock(System.Func{System.Object,System.Web.WebPages.HelperResult},System.Boolean)">
+            <summary>
+                Adds a block of script to be rendered out at a later point in the page rendering when
+                <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> is called.
+            </summary>
+            <param name="scriptTemplate">
+                the template for the block of script to render. The template must include the &lt;script
+                &gt; tags
+            </param>
+            <param name="renderOnAjax">
+                if set to <c>true</c> and the request is an AJAX request, the script will be written in the response.
+            </param>
+            <remarks>
+                A call to <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> will render all scripts.
+            </remarks>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptContext.AddScriptFile(System.String,System.Boolean)">
+            <summary>
+                Adds a script file to be rendered out at a later point in the page rendering when
+                <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> is called.
+            </summary>
+            <param name="path">the path to the script file to render later</param>
+            <param name="renderOnAjax">
+                if set to <c>true</c> and the request is an AJAX request, the script will be written in the response.
+            </param>
+            <remarks>
+                A call to <see cref="M:Forloop.HtmlHelpers.ScriptHtmlHelperExtensions.RenderScripts(System.Web.Mvc.HtmlHelper)"/> will render all scripts.
+            </remarks>
+        </member>
+        <member name="M:Forloop.HtmlHelpers.ScriptContext.Dispose">
+            <summary>
+                Pushes the <see cref="T:Forloop.HtmlHelpers.ScriptContext"/> onto the stack in <see cref="P:System.Web.HttpContext.Items"/>
+            </summary>
+        </member>
+        <member name="P:Forloop.HtmlHelpers.ScriptContext.ScriptPathResolver">
+            <summary>
+            Gets or sets the resolver used to resolve paths to script files.
+            </summary>
+            <value>
+            The script path resolver.
+            </value>
+        </member>
+        <member name="P:Forloop.HtmlHelpers.ScriptContext.Context">
+            <summary>
+            Gets or sets the context.
+            </summary>
+            <value>
+            The context.
+            </value>
+        </member>
+    </members>
+</doc>

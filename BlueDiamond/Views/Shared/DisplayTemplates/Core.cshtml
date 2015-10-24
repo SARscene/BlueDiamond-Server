@@ -1,0 +1,35 @@
+﻿@model BlueDiamond.DataModel.Core
+@if (Model == null)
+{
+    <div>Not set</div>
+}
+else
+{
+    @*<a class="btn btn-primary" data-toggle="collapse" href="#coreData" aria-expanded="false" aria-controls="coreData">
+        Link with href
+    </a>*@
+    <button class="btn btn-default btn-sm" type="button" data-toggle="collapse" data-target="#coreData" aria-expanded="false" aria-controls="coreData">
+        Metadata
+    </button>
+    <div class="collapse" id="coreData">
+        <div class="well">
+            <dl class="dl-horizontal">
+                <dt> @Html.DisplayNameFor(model => model.Created): </dt>
+                <dd> @Html.DisplayFor(model => model.Created) </dd>
+                <dt> @Html.DisplayNameFor(model => model.CreatedBy): </dt>
+                <dd> @Html.DisplayFor(model => model.CreatedBy) </dd>
+                <dt> @Html.DisplayNameFor(model => model.Modified): </dt>
+                <dd> @Html.DisplayFor(model => model.Modified) </dd>
+
+                <dt> @Html.DisplayNameFor(model => model.ModifiedBy): </dt>
+                <dd> @Html.DisplayFor(model => model.ModifiedBy) </dd>
+                <dt> @Html.DisplayNameFor(model => model.Version): </dt>
+                <dd> @Html.DisplayFor(model => model.Version) </dd>
+                <dt> @Html.DisplayNameFor(model => model.IsDeleted): </dt>
+                <dd> @(Model.IsDeleted ? "Yes" : "No") </dd>
+
+            </dl>
+        </div>
+    </div>
+
+}

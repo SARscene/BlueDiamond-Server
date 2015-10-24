@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BlueDiamond.DataModel.Incident>
+@{
+    ViewBag.Title = "BlueDiamond";
+}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="~/Content/Images/ICP300.png" width="200" height="200" />
+        </div>
+        <div class="col-md-9">
+            <h1>Blue Diamond</h1>
+            <p class="lead">Simple Incident Management.</p>
+        </div>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <h2>Incidents</h2>
+
+        <table class="table">
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.TaskNumber) </th>
+                <th> @Html.DisplayNameFor(model => model.Name) </th>
+                <th> @Html.DisplayNameFor(model => model.Opened) </th>
+                <th> @Html.DisplayNameFor(model => model.Closed) </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.ActionLink(item.TaskNumber.ToString(), "Details", "Incidents", new { id = item.IncidentID }, new object { })
+                    @*@Html.DisplayFor(modelItem => item.TaskNumber)*@ 
+                    </td>
+                    <td> @Html.DisplayFor(modelItem => item.Name) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Opened) </td>
+                    <td> @Html.DisplayFor(modelItem => item.Closed) </td>
+                    @*<td>
+                        @Html.ActionLink("Edit", "Edit", "Incidents", new { id = item.IncidentID },new object{}) |
+                        @Html.ActionLink("Details", "Details", "Incidents", new { id = item.IncidentID }, new object { }) |
+                        @Html.ActionLink("Delete", "Delete", "Incidents", new { id = item.IncidentID }, new object { }) |
+                        @Html.ActionLink("Sign In", "SignIn", "Incidents", new { id = item.IncidentID }, new object { })
+                    </td>*@
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        <p>@Html.ActionLink("Create an incident", "Create", "Incidents", new object { }, new { @class = "btn btn-default" }) </p>
+    }
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Incidents</h2>
+        <p></p>
+        <p>@Html.ActionLink("All Incidents", "Index", "Incidents", new object { }, new { @class = "btn btn-default" }) </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Members</h2>
+        <p> </p>
+        <p>@Html.ActionLink("List Members", "Index", "Members", new object { }, new { @class = "btn btn-default" }) </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Agencies</h2>
+        <p> </p>
+        <p>@Html.ActionLink("Agencies", "Index", "Agency", new object { }, new { @class = "btn btn-default" }) </p>
+    </div>
+</div>
