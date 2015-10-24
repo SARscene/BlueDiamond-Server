@@ -10,7 +10,8 @@ using BlueDiamond.DataModel;
 using BlueDiamond.Models;
 using BlueDiamond.StorageModel;
 using BlueDiamond.Utility;
-using Zen.Barcode;
+using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Controls;
 
 namespace BlueDiamond.Controllers
 {
@@ -35,10 +36,14 @@ namespace BlueDiamond.Controllers
         }
 
         public FileContentResult Show(Guid id)
-        {          
-            CodeQrBarcodeDraw bdf = BarcodeDrawFactory.CodeQr;
+        {
+            QrEncoder enc = new QrEncoder();
+            QrCode code = enc.Encode(GetUrl());
 
-            Image image = bdf.Draw(GetUrl(), 3, 3);
+            Renderer renderer = new Renderer(5);
+            Image image = new Bitmap(256,256);
+            using (Graphics graphics = Graphics.FromImage(image))
+                renderer.Draw(graphics, code.Matrix);
 
             byte[] imageByte = imageToByteArray(image);
             string contentType = "image/png";

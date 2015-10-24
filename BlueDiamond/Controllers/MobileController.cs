@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using BlueDiamond.DataModel;
 using BlueDiamond.StorageModel;
@@ -13,6 +16,7 @@ using BlueDiamond.Utility;
 namespace BlueDiamond.Controllers
 {
     [AllowCrossSiteJson]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MobileController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -45,20 +49,22 @@ namespace BlueDiamond.Controllers
         /// <summary>
         /// Sign-in lets the mobile application "sign in" or register with the incident
         /// </summary>
-        /// <param name="memberID">member ID - can be null</param>
+        /// <param name="id">member ID - can be null</param>
         /// <param name="name">user name</param>
         /// <param name="phoneNumber">user's phone number</param>
-        /// <returns>The member ID</returns>
-        public async Task<IHttpActionResult> SignIn(string memberID, string name, string phoneNumber)
+        [HttpGet]
+        [ResponseType(typeof(string))]
+        public IHttpActionResult SignIn(Guid? id)
         {
+            NameValueCollection nvc = HttpUtility.ParseQueryString(Request.RequestUri.Query);
+
+            string name = nvc["name"];
+            string phoneNumber = nvc["phoneNnumber"];
             try
             {
                 // get or create a member GUID
-                Guid memberGUID = Guid.Empty;
-                if (string.IsNullOrEmpty(memberID))
-                    memberGUID = Guid.NewGuid();
-                else
-                    memberGUID = new Guid(memberID);
+                if (!id.HasValue)
+                    id = Guid.NewGuid();
 
                 //get the open Incident
                 Incident incident = db.Incidents.ToList().FirstOrDefault(x => x.IsOpen);
@@ -66,12 +72,12 @@ namespace BlueDiamond.Controllers
                     return NotFound();
 
                 // get or create a new member
-                Member member = await db.Members.FindAsync(memberID);
+                Member member =  db.Members.Find(id);
                 if (member == null)
                 {
                     member = new DataModel.Member()
                     {
-                        MemberID = memberGUID,
+                        MemberID = id.Value,
                         FirstName = name,
                         LastName = "",
                         PhoneNumber = phoneNumber,
@@ -79,14 +85,14 @@ namespace BlueDiamond.Controllers
                         AgencyID = incident.AgencyID,
                     };
                     db.Members.Add(member);
-                    await db.SaveChangesAsync();
+                    db.SaveChanges();
                 }
 
                 // create a new signin
                 SignIn si = new SignIn()
                 {
                     IncidentID = incident.IncidentID,
-                    MemberID = memberGUID
+                    MemberID = id.Value
                 };
 
                 db.SignIns.Add(si);
@@ -95,9 +101,9 @@ namespace BlueDiamond.Controllers
                 Helpers.SignalSignIn(incident.IncidentID, member.LastName, member.FirstName, si.SignedIn);
 
                 // save changes
-                await db.SaveChangesAsync();
+                db.SaveChanges();
 
-                return Ok(memberGUID);
+                return Ok(id.Value.ToString());
             }
             catch (Exception ex)
             {
