@@ -59,10 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs">
+    <Compile Include="DiscoveryServer.cs" />
+    <Compile Include="Schemas\Configuration.cs">
       <DependentUpon>Configuration.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Configuration.Generated.cs">
+    <Compile Include="Schemas\Configuration.Generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Configuration.xsd</DependentUpon>
@@ -90,10 +91,11 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
-    <None Include="Configuration.xsd">
+    <None Include="Schemas\Configuration.xsd">
       <SubType>Designer</SubType>
       <Generator>XsdToClasses</Generator>
       <LastGenOutput>Configuration.Generated.cs</LastGenOutput>
+      <CustomToolNamespace>BlueDiamond.Desktop</CustomToolNamespace>
     </None>
     <None Include="Configuration\applicationhost.config" />
     <None Include="packages.config" />
@@ -106,21 +108,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="Scripts\jquery-3.2.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Configuration.Generated.xml">
+    <Content Include="Schemas\Configuration.Generated.xml">
       <DependentUpon>Configuration.xsd</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
-    <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\nugetexample.js" />
     <None Include="Resources\ICP300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documents\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlueDiamond.Utility\BlueDiamond.Utility.csproj">
+      <Project>{68ce057d-25f8-4dcf-874c-538212730d25}</Project>
+      <Name>BlueDiamond.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

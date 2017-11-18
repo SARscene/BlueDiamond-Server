@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BlueDiamond.Desktop")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Blue Diamond")]
+[assembly: AssemblyDescription("Descktop Server for Blue Diamond project")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("BCSARA")]
 [assembly: AssemblyProduct("BlueDiamond.Desktop")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © BCSARA 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

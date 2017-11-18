@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>QrCodeNet</id>
+    <version>0.3</version>
+    <authors>gmamaladze, Silverlancer</authors>
+    <owners>Simon.Timms</owners>
+    <licenseUrl>http://qrcodenet.codeplex.com/license</licenseUrl>
+    <projectUrl>http://qrcodenet.codeplex.com/</projectUrl>
+    <iconUrl>http://download-codeplex.sec.s-msft.com/Download?ProjectName=qrcodenet&amp;DownloadId=284288&amp;Build=19958</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provdes an easy to use, fully managed .Net library for handling QR code according to ISO/IEC 18004.</description>
+    <releaseNotes>This version contains only following functionality:
+Generation QR code
+GDI+ QR code rendering: WinForm, WriteableBitmap(WPF), DrawingContext.
+QR code Windows Forms Control, WPF control
+Save to file
+Demo application which generates QR code from text as you type and allows you to save it into the image file.
+Encoder should be now native code, no longer ZXing's port.
+Auto analyse input string and use proper char encoder to encode. (It will switch to UTF8 if normal encoder can not handle input string)
+It will throw exception when input string is empty, null or too huge where even version 40 QrCode can not contain, or you can use TryEncode method, return value's isContainMatrix property will indicate whether encode successful or not.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>QR Encoding</tags>
+    <dependencies>
+      <dependency id="SampleDependency" version="1.0" />
+    </dependencies>
+  </metadata>
+</package>

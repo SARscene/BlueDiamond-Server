@@ -2,5 +2,12 @@ BlueDiamond.Desktop/bin/*
 BlueDiamond.Desktop/obj/*
 *.suo
 BlueDiamond/bin/*
+/BlueDiamond/obj/*
 DataModel/bin/*
 DataModel/obj/*
+/BlueDiamond.Utility/bin/*
+/BlueDiamond.Utility/obj/*
+/.vs/BlueDiamond/v15/Server/sqlite3/db.lock
+/.vs/BlueDiamond/v15/Server/sqlite3/storage.ide
+/.vs/BlueDiamond/v15/Server/sqlite3/storage.ide-shm
+/.vs/BlueDiamond/v15/Server/sqlite3/storage.ide-wal
