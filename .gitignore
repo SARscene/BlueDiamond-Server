@@ -11,3 +11,5 @@ DataModel/obj/*
 /.vs/BlueDiamond/v15/Server/sqlite3/storage.ide
 /.vs/BlueDiamond/v15/Server/sqlite3/storage.ide-shm
 /.vs/BlueDiamond/v15/Server/sqlite3/storage.ide-wal
+/BlueDiamond/Properties/PublishProfiles
+/Build

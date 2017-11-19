@@ -22,6 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueDiamond.Desktop", "Blue
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueDiamond.Utility", "BlueDiamond.Utility\BlueDiamond.Utility.csproj", "{68CE057D-25F8-4DCF-874C-538212730D25}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{E5237E06-0730-4A5C-9941-BFCCFBCDB891}"
+	ProjectSection(SolutionItems) = preProject
+		Version Numbers.txt = Version Numbers.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

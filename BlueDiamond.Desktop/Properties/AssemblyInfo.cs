@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Blue Diamond")]
-[assembly: AssemblyDescription("Descktop Server for Blue Diamond project")]
+[assembly: AssemblyTitle("Blue Diamond Desktop")]
+[assembly: AssemblyDescription("Simple Incident Management System")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("BCSARA")]
-[assembly: AssemblyProduct("BlueDiamond.Desktop")]
-[assembly: AssemblyCopyright("Copyright © BCSARA 2017")]
+[assembly: AssemblyCompany("Blue Toque Software")]
+[assembly: AssemblyProduct("Blue Diamond")]
+[assembly: AssemblyCopyright("Copyright © Blue Toque Software 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.17.1119.0")]
+[assembly: AssemblyFileVersion("1.17.1119.0")]

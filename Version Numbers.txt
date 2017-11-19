@@ -1,0 +1,33 @@
+Blue Diamond Version Numbers
+
+Version numbers take the following form
+=======================================
+
+R.YY.MMDD.bbb
+
+Where
+R:   Major release number
+YY:  Two digit year
+MM:  Two digit Month
+DD:  Two digit day
+bbb: "n" digit build number
+
+On any given day of the year you can make a build. 
+Start with the current major revision, add the date, and increment the build number starting with 0
+The first build on July 1, 2017 is: 1.17.0701.0
+The twelfth build would be: 1.17.0701.12
+
+Ideally if we do more than 100 builds in a day we should be automating this process so that the build numbers
+prepend zeros to bring the last version segment to three digits. Normally we would not release more than 10 
+builds a day.
+
+Debug, Release and Test builds
+==============================
+
+A debug build contains debugging information and may contain paths that are designed to make the project
+work well in the designer, debugger or IDE.
+
+A release build would be a final releaed to production build designed to be installed on a client's machine
+
+A test build would be designed to be installed on a client's machine but may still contain debugging code
+and scaffolding to assist with detecting, logging, and resolving issues.
