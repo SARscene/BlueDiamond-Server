@@ -16,9 +16,9 @@ namespace BlueDiamond.Desktop
         /// Start the network discovery server
         /// <paramref name="serverName"/>
         /// </summary>
-        public static void Start(string serverName)
+        public static void Start(string serverName, string address)
         {
-            Trace.TraceInformation("DisciveryServer.Start");
+            Trace.TraceInformation("DiscoveryServer.Start");
             if (IsStarted)
                 return;
 
@@ -28,7 +28,7 @@ namespace BlueDiamond.Desktop
             {
                 try
                 {
-                    ServerTask(serverName);
+                    ServerTask(serverName, address);
                 }
                 catch (Exception ex)
                 {
@@ -43,7 +43,7 @@ namespace BlueDiamond.Desktop
         /// </summary>
         public static void Stop()
         {
-            Trace.TraceInformation("DisciveryServer.Stop");
+            Trace.TraceInformation("DiscoveryServer.Stop");
             IsStarted = false;
         }
 
@@ -53,13 +53,13 @@ namespace BlueDiamond.Desktop
 
         public static string ServerResponseAddress { get; set; }
 
-        static void ServerTask(string serverName)
+        static void ServerTask(string serverName, string address)
         {
+            var fullName = string.Format("{0}|{1}", serverName, address);
             Trace.TraceInformation("DiscoveryServer.ServerTask: starting");
-
             using (var udpServer = new UdpClient(8888))
             {
-                var responseData = Encoding.ASCII.GetBytes(serverName);
+                var responseData = Encoding.ASCII.GetBytes(fullName);
 
                 while (IsStarted)
                 {
@@ -68,10 +68,15 @@ namespace BlueDiamond.Desktop
                         var clientEndPoint = new IPEndPoint(IPAddress.Any, 0);
                         var clientRequestData = udpServer.Receive(ref clientEndPoint);
                         var requestData = Encoding.ASCII.GetString(clientRequestData);
-                        if (requestData == "BlueDiamond")
+
+                        if (requestData == serverName)
                         {
-                            Trace.TraceInformation("DiscoveryServer.ServerTask: Recived {0} from {1}, sending response", requestData, clientEndPoint.Address.ToString());
+                            Trace.TraceInformation("DiscoveryServer.ServerTask: Recieved {0} from {1}, sending response", requestData, clientEndPoint.Address.ToString());
                             udpServer.Send(responseData, responseData.Length, clientEndPoint);
+                        }
+                        else
+                        {
+                            Trace.TraceWarning("DiscoveryServer.ServerTask: Error, recieved {0} from {1}, NO response", requestData, clientEndPoint.Address.ToString());
                         }
                     }
                     catch (Exception ex)
@@ -109,26 +114,36 @@ namespace BlueDiamond.Desktop
 
                     // set the timeout to 
                     udpClient.Client.SendTimeout = timeout;
-                    udpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, 5000);
+                    udpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReceiveTimeout, timeout);
 
                     // send the request
                     udpClient.Send(requestData, requestData.Length, new IPEndPoint(IPAddress.Broadcast, 8888));
 
                     var serverResponseData = udpClient.Receive(ref serverEndPoint);
-
                     ServerResponse = Encoding.ASCII.GetString(serverResponseData);
-                    ServerResponseAddress = serverEndPoint.Address.ToString();
+                    var parts = ServerResponse.Split('|');
+                    if (parts.Length != 2)
+                    {
+                        Trace.TraceWarning("DiscoveryServer.FindServer: no address retrieved");
+                        ServerResponseAddress = serverEndPoint.Address.ToString();
+                    }
+                    else
+                    {
+                        ServerResponse = parts[0];
+                        ServerResponseAddress = parts[1];
+                        Trace.TraceInformation("DiscoveryServer.FindServer: Server \"{0}\" is at {1}", ServerResponse, ServerResponseAddress);
+                    }
 
-                    Trace.TraceInformation("Recived {0} from {1}", ServerResponse, serverEndPoint.Address.ToString());
+                    Trace.TraceInformation("DiscoveryServer.FindServer: Recived {0} from {1}", ServerResponse, serverEndPoint.Address.ToString());
 
                     udpClient.Close();
                 }
 
                 Trace.TraceInformation("DiscoveryServer.FindServer: got response");
 
-                return string.IsNullOrEmpty(ServerResponse);
+                return !string.IsNullOrEmpty(ServerResponse);
             }
-            catch (System.Net.Sockets.SocketException ex)
+            catch (SocketException ex)
             {
                 if (ex.SocketErrorCode == SocketError.TimedOut)
                     Trace.TraceInformation("DiscoveryServer.FindServer: Could not find server");

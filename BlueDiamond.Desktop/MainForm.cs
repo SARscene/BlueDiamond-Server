@@ -73,30 +73,24 @@ namespace BlueDiamond.Desktop
         {
             base.OnLoad(e);
             Trace.TraceInformation("Loading");
-
-            if (DiscoveryServer.FindServer("BlueDiamond", 2000))
-            {
-                // if the server exists, start a web browser with the URL to the server
-            }
-            else
-            {
-                // start the server
-                Start();
-            }
+            this.Cursor = Cursors.WaitCursor;
         }
 
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            
-            // this code does nothing
-            Uri uri = new Uri(string.Format("http://localhost:{0}{1}",
-                Settings.Default.Port,
-                Settings.Default.VirtualDirectory));
+       
+            if (DiscoveryServer.FindServer(this.Text, 5000))
+                StartBrowser();
+            else
+                Start();
+
+            this.Cursor = Cursors.Default;
         }
 
         protected override void OnClosing(CancelEventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             base.OnClosing(e);
 
             // stop the web server
@@ -133,7 +127,7 @@ namespace BlueDiamond.Desktop
         {
             try
             {
-                DiscoveryServer.Start("BlueDiamond");
+                DiscoveryServer.Start(this.Text, this.Url);
 
                 // get the full path to "this" directory
                 string dir = Paths.Expand(Settings.Default.ApplicationDirectory);
@@ -177,6 +171,23 @@ namespace BlueDiamond.Desktop
             //Close();
         }
 
+        private void StartBrowser()
+        {
+            // minimize the parent window
+            this.WindowState = FormWindowState.Minimized;
+
+            BrowserForm form = new BrowserForm();
+            form.FormClosed += Form_FormClosed;
+            form.Show(this);
+            form.Address = new Uri(DiscoveryServer.ServerResponseAddress);
+        }
+
+        private void Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (e.CloseReason != CloseReason.FormOwnerClosing)
+                this.Close();
+        }
+
         /// <summary>
         /// Show an error dialog
         /// </summary>
@@ -199,6 +210,7 @@ namespace BlueDiamond.Desktop
         {
             if (this.IsDisposed)
                 return;
+
             this.InvokeIfRequired(() =>
             {
                 myRichTextBox.AppendText(string.Format(format, parameters));
